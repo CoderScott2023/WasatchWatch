@@ -132,8 +132,27 @@ body {
   z-index: 200;
 }
 
-.ww-nav__links .has-dropdown:hover .ww-nav__dropdown {
+.ww-nav__links .has-dropdown .ww-nav__dropdown {
   display: block;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.ww-nav__links .has-dropdown:hover .ww-nav__dropdown {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.ww-nav__dropdown::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
 }
 
 .ww-nav__dropdown li a {
