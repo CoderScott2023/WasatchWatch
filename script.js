@@ -1,10 +1,5 @@
-/* ============================================================
-   WASATCH WATCH — Global Scripts
-   ============================================================ */
-
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── MOBILE NAV TOGGLE ──────────────────────────────────────
   const burger = document.querySelector('.ww-nav__burger');
   const navLinks = document.querySelector('.ww-nav__links');
 
@@ -15,7 +10,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── MOBILE DROPDOWN TOGGLE ─────────────────────────────────
+
+  document.querySelectorAll('.ww-nav__links .has-dropdown').forEach(item => {
+    let closeTimer = null;
+
+    const openDropdown = () => {
+      clearTimeout(closeTimer);
+      document.querySelectorAll('.ww-nav__links .has-dropdown').forEach(other => {
+        if (other !== item) other.classList.remove('open');
+      });
+      item.classList.add('open');
+    };
+
+    const scheduleClose = () => {
+      closeTimer = setTimeout(() => item.classList.remove('open'), 200);
+    };
+
+    item.addEventListener('mouseenter', () => {
+      if (window.innerWidth > 720) openDropdown();
+    });
+
+    item.addEventListener('mouseleave', () => {
+      if (window.innerWidth > 720) scheduleClose();
+    });
+
+    const dropdown = item.querySelector('.ww-nav__dropdown');
+    if (dropdown) {
+      dropdown.addEventListener('mouseenter', () => clearTimeout(closeTimer));
+      dropdown.addEventListener('mouseleave', () => scheduleClose());
+    }
+  });
   document.querySelectorAll('.ww-nav__links .has-dropdown > a').forEach(link => {
     link.addEventListener('click', (e) => {
       if (window.innerWidth <= 720) {
@@ -24,16 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
-  // ── ACTIVE NAV LINK ────────────────────────────────────────
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.ww-nav__links a').forEach(a => {
     const href = a.getAttribute('href')?.split('/').pop();
     if (href === currentPath) a.classList.add('active');
   });
 
-  // ── SCROLL-TRIGGERED FADE IN ───────────────────────────────
-  // For sections that load below the fold, re-trigger animation on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -43,8 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.ww-section').forEach((el, i) => {
-    // Pause animation initially for below-fold sections
+  document.querySelectorAll('.ww-section').forEach((el) => {
     const rect = el.getBoundingClientRect();
     if (rect.top > window.innerHeight) {
       el.style.animationPlayState = 'paused';
@@ -52,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ── SMOOTH SCROLL FOR ANCHOR LINKS ─────────────────────────
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const target = document.querySelector(a.getAttribute('href'));
@@ -62,9 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
-  // ── MAP CARD IMAGE LIGHTBOX ────────────────────────────────
-  // Click any map card image to view it fullscreen
   const lightbox = document.createElement('div');
   lightbox.id = 'ww-lightbox';
   lightbox.style.cssText = `
