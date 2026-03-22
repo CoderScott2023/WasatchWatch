@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monthly Reports — Wasatch Watch</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="ww-nav">
+  <a class="ww-nav__logo" href="index.html">⬡ Wasatch Watch</a>
+  <button class="ww-nav__burger">☰</button>
+  <ul class="ww-nav__links">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-dropdown">
+      <a href="#">Data</a>
+      <ul class="ww-nav__dropdown">
+        <li><a href="results.html">📊 The Results</a></li>
+        <li><a href="graphs.html">📈 Create Your Own Graphs</a></li>
+        <li><a href="repo.html">📂 Repository</a></li>
+        <li><a href="monthlyreports.html">📋 Monthly Reports</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">About</a>
+      <ul class="ww-nav__dropdown">
+        <li><a href="mission.html">🌍 The Mission</a></li>
+      </ul>
+    </li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="ww-hero ww-hero--short">
+  <img class="ww-hero__img" src="IMG_2276.jpg" alt="Wasatch Mountains">
+  <div class="ww-hero__overlay"></div>
+  <div class="ww-hero__content">
+    <div class="ww-hero__label">Data · Reports</div>
+    <h1 class="ww-hero__title">Monthly NDVI Reports</h1>
+    <p class="ww-hero__sub">Easy to understand reports of how vegetation changes throughout the Wasatch</p>
+  </div>
+</div>
+
+<div class="ww-container">
+
+  <div class="ww-section">
+    <div class="ww-section__tag">Getting Started</div>
+    <h2>How to Read Our Maps</h2>
+    <p>Read this to understand how we make our maps and how to read them.</p>
+    <a class="ww-card" href="how-to-read.html" style="max-width:400px; display:flex;">
+      <img class="ww-card__img" src="report_picture/rp_12_2025.png" alt="NDVI Map">
+      <div class="ww-card__body">
+        <span class="ww-card__tag">Guide</span>
+        <span class="ww-card__title">How to Read Our Maps</span>
+        <span class="ww-card__desc">Understand how we produce our maps, what the colors mean, and how to interpret NDVI values in a real-world context.</span>
+        <span class="ww-card__link">View Full Guide</span>
+      </div>
+    </a>
+  </div>
+
+  <hr class="ww-divider">
+
+  <div class="ww-section">
+    <div class="ww-section__tag">2026</div>
+    <h2>Monthly Reports</h2>
+    <div class="ww-card-grid">
+
+      <a class="ww-card" href="reports/r_1_2026.html">
+        <img class="ww-card__img" src="report_picture/rp_1_2026.png" alt="January 2026 NDVI Map">
+        <div class="ww-card__body">
+          <span class="ww-card__tag">Monthly Report</span>
+          <span class="ww-card__title">January 2026</span>
+          <span class="ww-card__desc">January 2026 NDVI increased across the Wasatch Front compared to December, with most vegetated areas between 0.7–0.9. Likely due to snowmelt exposing previous vegetation.</span>
+          <span class="ww-card__link">View Full Report</span>
+        </div>
+      </a>
+
+      <a class="ww-card" href="reports/r_12_2025.html">
+        <img class="ww-card__img" src="report_picture/rp_12_2025.png" alt="December 2025 NDVI Map">
+        <div class="ww-card__body">
+          <span class="ww-card__tag">Monthly Report</span>
+          <span class="ww-card__title">December 2025</span>
+          <span class="ww-card__desc">December 2025 NDVI decreased across the Wasatch Front compared to November, with most vegetated areas between 0.6–0.8. Apparent NDVI increases over the Great Salt Lake reflect relative measurement effects rather than vegetation growth.</span>
+          <span class="ww-card__link">View Full Report</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+</div>
+
+<footer class="ww-footer">
+  © 2025 <a href="index.html">Wasatch Watch</a> · Protecting the Future of the Wasatch
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

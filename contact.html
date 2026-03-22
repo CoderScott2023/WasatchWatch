@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Wasatch Watch</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin: 2rem 0;
+    }
+    .contact-item {
+      background: var(--surface);
+      padding: 1.75rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .contact-item__label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .contact-item__value {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--accent);
+    }
+    .contact-item__value a {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+<nav class="ww-nav">
+  <a class="ww-nav__logo" href="index.html">⬡ Wasatch Watch</a>
+  <button class="ww-nav__burger">☰</button>
+  <ul class="ww-nav__links">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-dropdown">
+      <a href="#">Data</a>
+      <ul class="ww-nav__dropdown">
+        <li><a href="results.html">📊 The Results</a></li>
+        <li><a href="graphs.html">📈 Create Your Own Graphs</a></li>
+        <li><a href="repo.html">📂 Repository</a></li>
+        <li><a href="monthlyreports.html">📋 Monthly Reports</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">About</a>
+      <ul class="ww-nav__dropdown">
+        <li><a href="mission.html">🌍 The Mission</a></li>
+      </ul>
+    </li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="ww-hero ww-hero--short">
+  <img class="ww-hero__img" src="IMG_2276.jpg" alt="Wasatch Mountains">
+  <div class="ww-hero__overlay"></div>
+  <div class="ww-hero__content">
+    <div class="ww-hero__label">Get In Touch</div>
+    <h1 class="ww-hero__title">Contact Us</h1>
+  </div>
+</div>
+
+<div class="ww-container">
+  <div class="ww-section">
+    <div class="ww-section__tag">Reach Out</div>
+    <h2>Reach Out to Me</h2>
+    <p>If you have any questions, suggestions, or want to contribute, feel free to reach out through any of the platforms below.</p>
+
+    <div class="contact-grid">
+      <div class="contact-item">
+        <span class="contact-item__label">Email</span>
+        <span class="contact-item__value">
+          <a href="mailto:sgv.skier@gmail.com">sgv.skier@gmail.com</a>
+        </span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item__label">Instagram</span>
+        <span class="contact-item__value">
+          <a href="https://instagram.com" target="_blank">The official account</a>
+        </span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item__label">GitHub</span>
+        <span class="contact-item__value">
+          <a href="https://github.com/CoderScott2023/WasatchWatchCode" target="_blank">WasatchWatchCode</a>
+        </span>
+      </div>
+    </div>
+
+    <p>Check out our repository and contribute on GitHub: <a href="https://github.com/CoderScott2023/WasatchWatchCode">Wasatch Watch GitHub</a></p>
+  </div>
+</div>
+
+<footer class="ww-footer">
+  © 2025 <a href="index.html">Wasatch Watch</a> · Protecting the Future of the Wasatch
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

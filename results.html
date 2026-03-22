@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Results — Wasatch Watch</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="ww-nav">
+  <a class="ww-nav__logo" href="index.html">⬡ Wasatch Watch</a>
+  <button class="ww-nav__burger">☰</button>
+  <ul class="ww-nav__links">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-dropdown">
+      <a href="#">Data</a>
+      <ul class="ww-nav__dropdown">
+        <li><a href="results.html">📊 The Results</a></li>
+        <li><a href="graphs.html">📈 Create Your Own Graphs</a></li>
+        <li><a href="repo.html">📂 Repository</a></li>
+        <li><a href="monthlyreports.html">📋 Monthly Reports</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">About</a>
+      <ul class="ww-nav__dropdown">
+        <li><a href="mission.html">🌍 The Mission</a></li>
+      </ul>
+    </li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="ww-hero ww-hero--short">
+  <img class="ww-hero__img" src="IMG_2276.jpg" alt="Wasatch Mountains">
+  <div class="ww-hero__overlay"></div>
+  <div class="ww-hero__content">
+    <div class="ww-hero__label">Data · Analysis</div>
+    <h1 class="ww-hero__title">NDVI Analysis Over Time</h1>
+    <p class="ww-hero__sub">Understanding vegetation changes in the Wasatch Front</p>
+  </div>
+</div>
+
+<div class="ww-container">
+
+  <div class="ww-section">
+    <div class="ww-section__tag">Long-Term Trends</div>
+    <h2>Long-Term NDVI Trends</h2>
+    <p>Over time, the NDVI has shown a general increase, indicating more vegetation. While this is positive in some ways, it also suggests shifts in seasonal patterns. More vegetation during winter months may be a consequence of climate change, with later winter starts and earlier ends.</p>
+    <div class="ww-map-card">
+      <div class="ww-map-card__header">
+        <span class="ww-map-card__title">NDVI Trends Graph</span>
+        <span class="ww-badge ww-badge--ndvi">2013 – 2026</span>
+      </div>
+      <img src="results1.png" alt="NDVI Trends Graph">
+    </div>
+  </div>
+
+  <div class="ww-section">
+    <div class="ww-section__tag">Climate Correlation</div>
+    <h2>Seasonal and Temperature Correlations</h2>
+    <p>Higher NDVI values in summer may contribute to hotter temperatures. Additionally, the distinction between pre-Landsat 8 and post-Landsat 8 data requires careful interpretation due to calibration differences.</p>
+    <div class="ww-map-card">
+      <img src="image3.png" alt="NDVI and Temperature Changes">
+    </div>
+  </div>
+
+  <div class="ww-section">
+    <div class="ww-section__tag">Methodology</div>
+    <h2>Data Calibration and Challenges</h2>
+    <p>Due to satellite updates, Landsat 8 captures NDVI data with greater precision but more erratic fluctuations. This means pre-2013 and post-2013 datasets must be treated separately. Despite this, key trends remain consistent: warm spikes grow larger, while cold spikes shrink over time.</p>
+    <div class="ww-callout ww-callout--note">
+      <div class="ww-callout__label">Calibration Note</div>
+      <p>Pre-2013 and post-2013 datasets use different Landsat sensors and must be interpreted separately due to calibration differences.</p>
+    </div>
+    <div class="ww-map-card">
+      <img src="image2.png" alt="Data Calibration Issues">
+    </div>
+  </div>
+
+  <div class="ww-section">
+    <div class="ww-section__tag">Conclusion</div>
+    <h2>Overall Results</h2>
+    <div class="ww-map-card">
+      <img src="results4.png" alt="Overall Results">
+    </div>
+    <div class="ww-conclusion">
+      <h3>Summary</h3>
+      <p>So in conclusion, we are seeing an increase in vegetation during winter and summer months, an increase in temperatures in both months, and correlation between the two. This is likely caused by climate change, and is only growing over time. We can't keep waiting, and we must act now if we are to fix this disaster, or we may lose much of what we love about the Wasatch.</p>
+    </div>
+  </div>
+
+</div>
+
+<footer class="ww-footer">
+  © 2025 <a href="index.html">Wasatch Watch</a> · Protecting the Future of the Wasatch
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

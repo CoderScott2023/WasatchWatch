@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wasatch Watch</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="ww-nav">
+  <a class="ww-nav__logo" href="index.html">⬡ Wasatch Watch</a>
+  <button class="ww-nav__burger">☰</button>
+  <ul class="ww-nav__links">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-dropdown">
+      <a href="#">Data</a>
+      <ul class="ww-nav__dropdown">
+        <li><a href="results.html">📊 The Results</a></li>
+        <li><a href="graphs.html">📈 Create Your Own Graphs</a></li>
+        <li><a href="repo.html">📂 Repository</a></li>
+        <li><a href="monthlyreports.html">📋 Monthly Reports</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">About</a>
+      <ul class="ww-nav__dropdown">
+        <li><a href="mission.html">🌍 The Mission</a></li>
+      </ul>
+    </li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="ww-hero">
+  <img class="ww-hero__img" src="IMG_2276.jpg" alt="Wasatch Mountains">
+  <div class="ww-hero__overlay"></div>
+  <div class="ww-hero__content">
+    <div class="ww-hero__label">Environmental Monitoring</div>
+    <h1 class="ww-hero__title">Welcome to Wasatch Watch</h1>
+    <p class="ww-hero__sub">Tracking the environmental health of the Wasatch Front</p>
+  </div>
+</div>
+
+<div class="ww-container">
+
+  <div class="ww-section">
+    <div class="ww-section__tag">Why It Matters</div>
+    <h2>Why Monitor the Wasatch?</h2>
+    <p>The Wasatch Front is experiencing rapid environmental changes, from rising temperatures to worsening air quality. By collecting and analyzing real-world data, we aim to provide insights into these shifts and their impact on local ecosystems and human health.</p>
+    <div class="ww-map-card">
+      <img src="image1.png" alt="Air pollution over Wasatch Front">
+    </div>
+  </div>
+
+  <div class="ww-section">
+    <div class="ww-section__tag">Vegetation Index</div>
+    <h2>NDVI Trends Over Time</h2>
+    <p>Using satellite imagery, we measure vegetation health through the Normalized Difference Vegetation Index (NDVI). This helps us track long-term changes in plant life, from seasonal shifts to the impact of droughts and urban development.</p>
+    <div class="ww-map-card">
+      <img src="image2.png" alt="NDVI Graph Example">
+    </div>
+  </div>
+
+  <div class="ww-section">
+    <div class="ww-section__tag">Climate Signals</div>
+    <h2>Air Quality &amp; Temperature Changes</h2>
+    <p>Rising temperatures and wildfires contribute to worsening air quality. Our data visualizations illustrate how these factors interact, showing trends in pollution levels, extreme heat days, and their potential effects on public health.</p>
+    <div class="ww-map-card">
+      <img src="image3.png" alt="Wasatch Air Quality">
+    </div>
+  </div>
+
+</div>
+
+<footer class="ww-footer">
+  © 2025 <a href="index.html">Wasatch Watch</a> · Protecting the Future of the Wasatch
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
