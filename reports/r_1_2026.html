@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>January 2026 — Wasatch Watch</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav class="ww-nav">
+  <a class="ww-nav__logo" href="../index.html">⬡ Wasatch Watch</a>
+  <button class="ww-nav__burger">☰</button>
+  <ul class="ww-nav__links">
+    <li><a href="../index.html">Home</a></li>
+    <li class="has-dropdown">
+      <a href="#">Data</a>
+      <ul class="ww-nav__dropdown">
+        <li><a href="../results.html">📊 The Results</a></li>
+        <li><a href="../graphs.html">📈 Create Your Own Graphs</a></li>
+        <li><a href="../repo.html">📂 Repository</a></li>
+        <li><a href="../monthlyreports.html">📋 Monthly Reports</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">About</a>
+      <ul class="ww-nav__dropdown">
+        <li><a href="../mission.html">🌍 The Mission</a></li>
+      </ul>
+    </li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="ww-hero">
+  <img class="ww-hero__img" src="../IMG_2276.jpg" alt="Wasatch Mountains">
+  <div class="ww-hero__overlay"></div>
+  <div class="ww-hero__content">
+    <div class="ww-hero__label">Monthly Report · Issue 02</div>
+    <h1 class="ww-hero__title">January 2026</h1>
+    <p class="ww-hero__sub">Vegetation dynamics across the Wasatch Front</p>
+  </div>
+</div>
+
+<div class="ww-container">
+
+  <div class="ww-stats">
+    <div class="ww-stat">
+      <span class="ww-stat__label">Month-over-Month</span>
+      <span class="ww-stat__value ww-stat__value--up">↑ NDVI</span>
+      <span class="ww-stat__note">Dec 2025 → Jan 2026</span>
+    </div>
+    <div class="ww-stat">
+      <span class="ww-stat__label">Year-over-Year Mountains</span>
+      <span class="ww-stat__value ww-stat__value--up">↑ Higher</span>
+      <span class="ww-stat__note">Jan 2025 → Jan 2026</span>
+    </div>
+    <div class="ww-stat">
+      <span class="ww-stat__label">Primary Driver</span>
+      <span class="ww-stat__value ww-stat__value--sm">Snow Drought</span>
+      <span class="ww-stat__note">Missing snowpack signal</span>
+    </div>
+  </div>
+
+  <div class="ww-section">
+    <div class="ww-section__tag">Current Month</div>
+    <h2>January 2026 NDVI</h2>
+    <p>Raw vegetation index across the Wasatch Front for January 2026. Winter NDVI values are inherently low across the region — the meaningful signal lies not in absolute values but in how this month compares to the historical record and to adjacent months.</p>
+
+    <div class="ww-map-card">
+      <div class="ww-map-card__header">
+        <span class="ww-map-card__title">NDVI — January 2026</span>
+        <span class="ww-badge ww-badge--ndvi">Raw NDVI</span>
+      </div>
+      <img src="../report_picture/rp_1_2026.png" alt="January 2026 NDVI Map">
+      <div class="ww-map-card__caption">Landsat 8 median composite · 5.5km resolution · Wasatch Front bounding region</div>
+    </div>
+  </div>
+
+  <div class="ww-section">
+    <div class="ww-section__tag">Month-over-Month</div>
+    <h2>Change from December 2025</h2>
+    <p>NDVI increased noticeably from December to January, with the most significant gains in mountainous regions. Lower-elevation areas including the Salt Lake Valley also showed increases, though less pronounced.</p>
+
+    <div class="ww-callout">
+      <div class="ww-callout__label">Key Finding</div>
+      <p>The increase is likely driven by snowmelt exposing underlying vegetation rather than new plant growth. Snow suppresses NDVI by masking ground cover — as it melts, readings rise even with no ecological change.</p>
+    </div>
+
+    <div class="ww-map-card">
+      <div class="ww-map-card__header">
+        <span class="ww-map-card__title">Difference Map — Dec 2025 → Jan 2026</span>
+        <span class="ww-badge ww-badge--up">↑ Net Increase</span>
+      </div>
+      <img src="../report_picture/rp_1_2026_diff.png" alt="Dec 2025 to Jan 2026 Difference Map">
+      <div class="ww-map-card__caption">Blue = NDVI increase · Red = NDVI decrease · Values represent absolute NDVI change</div>
+    </div>
+  </div>
+
+  <div class="ww-section">
+    <div class="ww-section__tag">Year-over-Year</div>
+    <h2>January 2026 vs. January 2025</h2>
+    <p>Compared to January 2025, mountainous and natural regions show higher NDVI in 2026, while the Salt Lake Valley and lower-elevation areas show a slight decrease. This divergence is the more telling signal.</p>
+
+    <div class="ww-callout ww-callout--warn">
+      <div class="ww-callout__label">Interpretation Warning</div>
+      <p>Higher mountain NDVI in 2026 does not indicate healthier vegetation — it reflects <em>less snow cover</em>. Bare dormant ground reads higher than snow-covered ground. This is a snow drought signal masquerading as greenness.</p>
+    </div>
+
+    <div class="ww-map-card">
+      <div class="ww-map-card__header">
+        <span class="ww-map-card__title">Difference Map — Jan 2025 → Jan 2026</span>
+        <span class="ww-badge ww-badge--yoy">Year-over-Year</span>
+      </div>
+      <img src="../report_picture/rp_1_2026_diff25.png" alt="Jan 2025 to Jan 2026 Difference Map">
+      <div class="ww-map-card__caption">Positive values in mountain areas reflect reduced snow cover relative to January 2025</div>
+    </div>
+  </div>
+
+  <hr class="ww-divider">
+
+  <div class="ww-conclusion">
+    <h3>Summary</h3>
+    <p>January 2026 showed a clear NDVI increase from December 2025, particularly in mountainous areas, driven by snowmelt exposing vegetation rather than new growth. Compared to January 2025, mountain regions appear greener while valley regions declined slightly — a pattern consistent with ongoing snow drought conditions across the region.</p>
+    <p>The January increase highlights how winter NDVI is dominated by snow cover dynamics rather than vegetation health. Anomalously high mountain NDVI in January 2026 should be read as a warning signal, not a positive indicator.</p>
+  </div>
+
+  <div class="ww-callout ww-callout--note">
+    <div class="ww-callout__label">Methodological Note</div>
+    <p>NDVI values derived from Landsat 8 TOA median composites at 5.5km resolution. Difference maps computed from raw NDVI prior to any normalization. Historical comparisons use the 2013–2026 Landsat archive.</p>
+  </div>
+
+  <div class="ww-footnotes">
+    <h4>Data Sources</h4>
+    <p>Landsat 8/9 imagery courtesy of the U.S. Geological Survey via Google Earth Engine.</p>
+    <p>NOAA National Centers for Environmental Information, Monthly Climate Reports and drought summaries.</p>
+  </div>
+
+</div>
+
+<footer class="ww-footer">
+  © 2025 <a href="../index.html">Wasatch Watch</a> · Protecting the Future of the Wasatch
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
