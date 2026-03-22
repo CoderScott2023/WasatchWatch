@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>December 2025 — Wasatch Watch</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav class="ww-nav">
+  <a class="ww-nav__logo" href="../index.html">⬡ Wasatch Watch</a>
+  <button class="ww-nav__burger">☰</button>
+  <ul class="ww-nav__links">
+    <li><a href="../index.html">Home</a></li>
+    <li class="has-dropdown">
+      <a href="#">Data</a>
+      <ul class="ww-nav__dropdown">
+        <li><a href="../results.html">📊 The Results</a></li>
+        <li><a href="../graphs.html">📈 Create Your Own Graphs</a></li>
+        <li><a href="../repo.html">📂 Repository</a></li>
+        <li><a href="../monthlyreports.html">📋 Monthly Reports</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">About</a>
+      <ul class="ww-nav__dropdown">
+        <li><a href="../mission.html">🌍 The Mission</a></li>
+      </ul>
+    </li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="ww-hero">
+  <img class="ww-hero__img" src="../IMG_2276.jpg" alt="Wasatch Mountains">
+  <div class="ww-hero__overlay"></div>
+  <div class="ww-hero__content">
+    <div class="ww-hero__label">Monthly Report · Issue 01</div>
+    <h1 class="ww-hero__title">December 2025</h1>
+    <p class="ww-hero__sub">Vegetation dynamics across the Wasatch Front</p>
+  </div>
+</div>
+
+<div class="ww-container">
+
+  <div class="ww-stats">
+    <div class="ww-stat">
+      <span class="ww-stat__label">Month-over-Month Change</span>
+      <span class="ww-stat__value ww-stat__value--down">↓ NDVI</span>
+      <span class="ww-stat__note">Nov 2025 → Dec 2025</span>
+    </div>
+    <div class="ww-stat">
+      <span class="ww-stat__label">Year-over-Year Change</span>
+      <span class="ww-stat__value ww-stat__value--down">↓ Slight</span>
+      <span class="ww-stat__note">Dec 2024 → Dec 2025</span>
+    </div>
+    <div class="ww-stat">
+      <span class="ww-stat__label">Primary Driver</span>
+      <span class="ww-stat__value ww-stat__value--sm">Snow + Drought</span>
+      <span class="ww-stat__note">Seasonal & interannual signal</span>
+    </div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="ww-section">
+    <div class="ww-section__tag">Current Month</div>
+    <h2>December 2025 NDVI</h2>
+    <p>During December 2025, we see an NDVI map of the Wasatch Front with values much less prominent than November. The NDVI values across the Wasatch Front seemed to hover in between levels of 0.6–0.8 across a min-max normalized scale of 0–1. The Great Salt Lake seemed to hover around levels of around 0.1–0.3, which while this is higher than last month, it is important to note that NDVI is a relative index, so it measures compared to the surrounding area. The Great Salt Lake increasing in NDVI is likely not an increase in vegetation, and rather a decrease in surrounding NDVI, leading to a lesser deviation.</p>
+
+    <div class="ww-map-card">
+      <div class="ww-map-card__header">
+        <span class="ww-map-card__title">NDVI — December 2025</span>
+        <span class="ww-badge ww-badge--ndvi">Raw NDVI</span>
+      </div>
+      <img src="../report_picture/rp_12_2025.png" alt="December 2025 NDVI Map">
+      <div class="ww-map-card__caption">Landsat 8 median composite · 5.5km resolution · Wasatch Front bounding region</div>
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="ww-section">
+    <div class="ww-section__tag">Month-over-Month</div>
+    <h2>Change from November 2025</h2>
+    <p>We also measured last month's (November 2025) median NDVI for comparison, which showed a substantial decrease in the last month (disregarding the lake, as explained above). The difference map below illustrates the loss in vegetation, which is expected for winter months especially as snowfall can mask vegetation. Additionally, due to the late winter this year, this could be a byproduct of a substantial amount of snow precipitation in December, while there was little in November.</p>
+
+    <div class="ww-map-card">
+      <div class="ww-map-card__header">
+        <span class="ww-map-card__title">Difference Map — Nov 2025 → Dec 2025</span>
+        <span class="ww-badge ww-badge--down">↓ Net Decrease</span>
+      </div>
+      <img src="../report_picture/rp_12_2025_diff.png" alt="Nov to Dec 2025 Difference Map">
+      <div class="ww-map-card__caption">Blue = NDVI increase · Red = NDVI decrease · Values represent absolute NDVI change</div>
+    </div>
+
+    <div class="ww-map-card">
+      <div class="ww-map-card__header">
+        <span class="ww-map-card__title">NDVI — November 2025</span>
+        <span class="ww-badge ww-badge--neutral">Previous Month</span>
+      </div>
+      <img src="../report_picture/rp_11_2025.png" alt="November 2025 NDVI Map">
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="ww-section">
+    <div class="ww-section__tag">Year-over-Year</div>
+    <h2>December 2025 vs. December 2024</h2>
+    <p>Another thing we saw was the slight decrease in overall vegetation from December 2024 to December 2025, although it was by no means as substantial as the decrease from November 2025 to December 2025. This could be due to the warmer winter we've had this year, as regional drought and temperature conditions reported by NOAA provide contextual support for the observed interannual NDVI decline between December 2024 and December 2025.</p>
+
+    <div class="ww-map-card">
+      <div class="ww-map-card__header">
+        <span class="ww-map-card__title">Difference Map — Dec 2024 → Dec 2025</span>
+        <span class="ww-badge ww-badge--yoy">Year-over-Year</span>
+      </div>
+      <img src="../report_picture/rp_12_2025_diff24.png" alt="Dec 2024 to Dec 2025 Difference Map">
+      <div class="ww-map-card__caption">The large rectangular block of green is a remote sensing artifact, likely cloud cover — disregard</div>
+    </div>
+  </div>
+
+  <hr class="ww-divider">
+
+  <!-- CONCLUSION -->
+  <div class="ww-conclusion">
+    <h3>Summary</h3>
+    <p>We saw a decrease in NDVI from November 2025 to December 2025 with the likely cause of increased snow cover, as well as a decrease in NDVI from December 2024 to December 2025, likely due to drought and warmer temperatures.</p>
+  </div>
+
+  <div class="ww-callout ww-callout--note">
+    <div class="ww-callout__label">Interpretive Notes</div>
+    <p>The seasonal NDVI drop highlights the strong effect of snow on satellite-derived vegetation indices. The interannual decline may suggest early signs of vegetation stress entering winter, potentially influenced by warmer temperatures and drought. These observations are contextual and not definitive conclusions.</p>
+  </div>
+
+  <!-- FOOTNOTES -->
+  <div class="ww-footnotes">
+    <h4>Works Cited</h4>
+    <p>Landsat-8 imagery courtesy of the U.S. Geological Survey.</p>
+    <p>NOAA National Centers for Environmental Information, Monthly Global Drought Narrative for December 2025, published online January 2026, retrieved on January 23, 2026 from <a href="https://www.ncei.noaa.gov/access/monitoring/monthly-report/global-drought/202512" target="_blank">ncei.noaa.gov</a>.</p>
+  </div>
+
+</div>
+
+<footer class="ww-footer">
+  © 2025 <a href="../index.html">Wasatch Watch</a> · Protecting the Future of the Wasatch
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
