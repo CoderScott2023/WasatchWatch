@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Read Our Maps — Wasatch Watch</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="ww-nav">
+  <a class="ww-nav__logo" href="index.html">⬡ Wasatch Watch</a>
+  <button class="ww-nav__burger">☰</button>
+  <ul class="ww-nav__links">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-dropdown">
+      <a href="#">Data</a>
+      <ul class="ww-nav__dropdown">
+        <li><a href="results.html">📊 The Results</a></li>
+        <li><a href="graphs.html">📈 Create Your Own Graphs</a></li>
+        <li><a href="repo.html">📂 Repository</a></li>
+        <li><a href="monthlyreports.html">📋 Monthly Reports</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">About</a>
+      <ul class="ww-nav__dropdown">
+        <li><a href="mission.html">🌍 The Mission</a></li>
+      </ul>
+    </li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="ww-hero ww-hero--short">
+  <img class="ww-hero__img" src="IMG_2276.jpg" alt="Wasatch Mountains">
+  <div class="ww-hero__overlay"></div>
+  <div class="ww-hero__content">
+    <div class="ww-hero__label">Guide</div>
+    <h1 class="ww-hero__title">NDVI Maps</h1>
+    <p class="ww-hero__sub">How you can learn to read our maps</p>
+  </div>
+</div>
+
+<div class="ww-container">
+
+  <div class="ww-section">
+    <div class="ww-section__tag">The Index</div>
+    <h2>What is NDVI?</h2>
+    <p>At Wasatch Watch, we use maps graded by an index known as NDVI. In order to understand how to read an NDVI map, you must understand what NDVI is.</p>
+    <p>NDVI, short for "normalized difference vegetation index" is an index that measures the relative greenness of an area. Essentially, how much vegetation cover there is in any one area of the plot relative to the rest of the plot. In this case, we use a relatively small-scale map of the Wasatch Front with 5 square km resolution (that is, each pixel you see in the graph is a 5 square km piece of land).</p>
+
+    <div class="ww-stats">
+      <div class="ww-stat">
+        <span class="ww-stat__label">Value of 1.0</span>
+        <span class="ww-stat__value ww-stat__value--up">Most Vegetated</span>
+        <span class="ww-stat__note">Healthy, flourishing vegetation</span>
+      </div>
+      <div class="ww-stat">
+        <span class="ww-stat__label">Value of 0.2–0.3</span>
+        <span class="ww-stat__value" style="font-size:1.2rem; padding-top:0.4rem;">Stressed</span>
+        <span class="ww-stat__note">Likely unhealthy vegetation</span>
+      </div>
+      <div class="ww-stat">
+        <span class="ww-stat__label">Value of 0.0</span>
+        <span class="ww-stat__value ww-stat__value--down">Unvegetated</span>
+        <span class="ww-stat__note">Roads, water bodies, bare soil</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ww-section">
+    <div class="ww-section__tag">Map Type 1</div>
+    <h2>NDVI Gradient Maps</h2>
+    <p>These graphs we label with the title "NDVI Gradient Map", and put the date in the file name. The color scale runs from red (low vegetation) through yellow to green (high vegetation). An example of an NDVI map is shown below:</p>
+    <div class="ww-map-card">
+      <div class="ww-map-card__header">
+        <span class="ww-map-card__title">Example — NDVI Gradient Map</span>
+        <span class="ww-badge ww-badge--ndvi">Raw NDVI</span>
+      </div>
+      <img src="report_picture/rp_12_2025.png" alt="NDVI Map Example">
+      <div class="ww-map-card__caption">Red = low vegetation · Yellow = moderate · Green = high vegetation</div>
+    </div>
+  </div>
+
+  <div class="ww-section">
+    <div class="ww-section__tag">Map Type 2</div>
+    <h2>NDVI Difference Maps</h2>
+    <p>We also use a type of NDVI graph known as a difference graph. These difference graphs take the difference between the current month, and the month of comparison (typically the month of comparison will either be the previous month, or the same month in a different year). This shows a direct comparison of how the vegetation increased or decreased between the two time periods. A majority green difference graph means vegetation grew, while a majority red means vegetation was lost.</p>
+    <p>These graphs are labelled with the title "NDVI Difference Map", along with the date of the current month and the month of comparison in that order. An example is shown below:</p>
+    <div class="ww-map-card">
+      <div class="ww-map-card__header">
+        <span class="ww-map-card__title">Example — NDVI Difference Map</span>
+        <span class="ww-badge ww-badge--up">Difference Map</span>
+      </div>
+      <img src="report_picture/rp_12_2025_diff.png" alt="NDVI Difference Map Example">
+      <div class="ww-map-card__caption">Green = vegetation increase · Red = vegetation decrease</div>
+    </div>
+  </div>
+
+  <div class="ww-section">
+    <div class="ww-section__tag">Common Question</div>
+    <h2>Why Does the Great Salt Lake Look Green?</h2>
+    <p>Perhaps you have noticed the increase in vegetation over the Great Salt Lake in some difference maps. However, obviously the Great Salt Lake did not grow vegetation on it (or at least, not to such a significant degree). Because NDVI is a relative index, it appears that way. When the baseline of vegetation is less vegetated than normal, the Great Salt Lake appears more vegetated relative to a map where the vegetation baseline is much higher, despite being the same throughout the year. This also shows up as an artifact in the difference maps.</p>
+
+    <div class="ww-callout ww-callout--note">
+      <div class="ww-callout__label">Methodological Note</div>
+      <p>This is a known artifact of relative NDVI normalization. Our newer reports use absolute raw NDVI values for difference maps, which eliminates this issue. Older reports may still show this effect.</p>
+    </div>
+  </div>
+
+  <div class="ww-conclusion">
+    <h3>You're Ready</h3>
+    <p>Using this knowledge, you can now read our NDVI maps and reports. Thank you for using Wasatch Watch!</p>
+  </div>
+
+</div>
+
+<footer class="ww-footer">
+  © 2025 <a href="index.html">Wasatch Watch</a> · Protecting the Future of the Wasatch
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

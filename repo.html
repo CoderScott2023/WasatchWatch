@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repository — Wasatch Watch</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .repo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin: 2rem 0;
+    }
+    .repo-item {
+      background: var(--surface);
+      padding: 1.75rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: background 0.18s;
+    }
+    .repo-item:hover { background: var(--surface2); }
+    .repo-item__icon {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+    .repo-item__label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .repo-item__title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+    .repo-item__link {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-top: 0.25rem;
+    }
+    .repo-item__link::after { content: ' →'; }
+  </style>
+</head>
+<body>
+
+<nav class="ww-nav">
+  <a class="ww-nav__logo" href="index.html">⬡ Wasatch Watch</a>
+  <button class="ww-nav__burger">☰</button>
+  <ul class="ww-nav__links">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-dropdown">
+      <a href="#">Data</a>
+      <ul class="ww-nav__dropdown">
+        <li><a href="results.html">📊 The Results</a></li>
+        <li><a href="graphs.html">📈 Create Your Own Graphs</a></li>
+        <li><a href="repo.html">📂 Repository</a></li>
+        <li><a href="monthlyreports.html">📋 Monthly Reports</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">About</a>
+      <ul class="ww-nav__dropdown">
+        <li><a href="mission.html">🌍 The Mission</a></li>
+      </ul>
+    </li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="ww-hero ww-hero--short">
+  <img class="ww-hero__img" src="IMG_2276.jpg" alt="Wasatch Mountains">
+  <div class="ww-hero__overlay"></div>
+  <div class="ww-hero__content">
+    <div class="ww-hero__label">Data · Open Source</div>
+    <h1 class="ww-hero__title">Repository</h1>
+    <p class="ww-hero__sub">Access our data, code, and resources</p>
+  </div>
+</div>
+
+<div class="ww-container">
+
+  <div class="ww-section">
+    <div class="ww-section__tag">Resources</div>
+    <h2>Access Our Resources</h2>
+    <p>Explore our datasets, code, and tools to analyze environmental data from the Wasatch Front.</p>
+
+    <div class="repo-grid">
+      <a class="repo-item" href="https://github.com/CoderScott2023/EnviromentalMonitor" target="_blank">
+        <span class="repo-item__icon">📂</span>
+        <span class="repo-item__label">Code</span>
+        <span class="repo-item__title">Main GitHub Repository</span>
+        <span class="repo-item__link">View on GitHub</span>
+      </a>
+      <a class="repo-item" href="https://colab.research.google.com/drive/1YrZFUDD6eJzjrtjcrd-Pmbq-AJ6FMs0x#scrollTo=Y7_jv6UMGBC_" target="_blank">
+        <span class="repo-item__icon">📊</span>
+        <span class="repo-item__label">Notebook</span>
+        <span class="repo-item__title">Google Colab Notebook</span>
+        <span class="repo-item__link">Open in Colab</span>
+      </a>
+      <a class="repo-item" href="https://github.com/CoderScott2023/EnviromentalMonitor/tree/CREATE-YOUR-OWN" target="_blank">
+        <span class="repo-item__icon">📈</span>
+        <span class="repo-item__label">Tool</span>
+        <span class="repo-item__title">Custom Graph Tool</span>
+        <span class="repo-item__link">View on GitHub</span>
+      </a>
+      <a class="repo-item" href="https://drive.google.com/drive/folders/1AkRGwaYg0Ei4SoqV274-eQCWGwK8OC8L?usp=drive_link" target="_blank">
+        <span class="repo-item__icon">📁</span>
+        <span class="repo-item__label">Data</span>
+        <span class="repo-item__title">Google Drive Data Folder</span>
+        <span class="repo-item__link">Open in Drive</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="ww-footer">
+  © 2025 <a href="index.html">Wasatch Watch</a> · Protecting the Future of the Wasatch
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
