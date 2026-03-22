@@ -132,27 +132,8 @@ body {
   z-index: 200;
 }
 
-.ww-nav__links .has-dropdown .ww-nav__dropdown {
+.ww-nav__links .has-dropdown.open .ww-nav__dropdown {
   display: block;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(4px);
-  transition: opacity 0.15s ease, transform 0.15s ease;
-}
-
-.ww-nav__links .has-dropdown:hover .ww-nav__dropdown {
-  opacity: 1;
-  pointer-events: all;
-  transform: translateY(0);
-}
-
-.ww-nav__dropdown::before {
-  content: '';
-  position: absolute;
-  top: -8px;
-  left: 0;
-  right: 0;
-  height: 8px;
 }
 
 .ww-nav__dropdown li a {
@@ -197,7 +178,7 @@ body {
   }
   .ww-nav__burger { display: block; }
   .ww-nav__dropdown { position: static; box-shadow: none; border: none; background: transparent; padding-left: 1rem; }
-  .ww-nav__links .has-dropdown:hover .ww-nav__dropdown { display: none; }
+  .ww-nav__links .has-dropdown.open .ww-nav__dropdown { display: none; }
   .ww-nav__links .has-dropdown.open .ww-nav__dropdown { display: block; }
 }
 
@@ -594,7 +575,6 @@ body {
   max-width: none;
 }
 
-/* ── PROSE (mission, about pages) ──────────────────────────── */
 .ww-prose {
   max-width: 68ch;
   margin: 3rem auto;
@@ -612,7 +592,6 @@ body {
   margin-bottom: 1.1rem;
 }
 
-/* ── FOOTER ────────────────────────────────────────────────── */
 .ww-footer {
   border-top: 1px solid var(--border);
   padding: 2rem;
