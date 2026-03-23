@@ -3,9 +3,199 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wasatch Watch</title>
+  <title>Wasatch Watch — Satellite Environmental Monitoring</title>
   <link rel="icon" type="image/png" href="/croppedmaps.png">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .ww-latest {
+      background: var(--surface, #f8f9fa);
+      border: 1px solid var(--border, #e0e0e0);
+      border-radius: 12px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin: 2rem 0;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.2s;
+    }
+    .ww-latest:hover {
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    }
+    .ww-latest__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      min-height: 220px;
+    }
+    .ww-latest__body {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+    .ww-latest__eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent, #2d7a3a);
+    }
+    .ww-latest__title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0;
+    }
+    .ww-latest__summary {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      opacity: 0.8;
+      margin: 0;
+    }
+    .ww-latest__cta {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent, #2d7a3a);
+      text-decoration: none;
+    }
+    @media (max-width: 640px) {
+      .ww-latest { grid-template-columns: 1fr; }
+      .ww-latest__img { min-height: 180px; }
+    }
+
+    .ww-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+    .ww-metric {
+      background: var(--surface, #f8f9fa);
+      border: 1px solid var(--border, #e0e0e0);
+      border-radius: 10px;
+      padding: 1.25rem 1rem;
+      text-align: center;
+    }
+    .ww-metric__value {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--accent, #2d7a3a);
+      display: block;
+    }
+    .ww-metric__label {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-top: 0.25rem;
+      display: block;
+    }
+    @media (max-width: 640px) {
+      .ww-metrics { grid-template-columns: 1fr; }
+    }
+
+    .ww-methods {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+    .ww-method {
+      background: var(--surface, #f8f9fa);
+      border: 1px solid var(--border, #e0e0e0);
+      border-radius: 10px;
+      padding: 1.25rem;
+    }
+    .ww-method__icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .ww-method__title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin: 0 0 0.4rem 0;
+    }
+    .ww-method__desc {
+      font-size: 0.875rem;
+      line-height: 1.55;
+      opacity: 0.8;
+      margin: 0;
+    }
+    @media (max-width: 640px) {
+      .ww-methods { grid-template-columns: 1fr; }
+    }
+
+    .ww-about {
+      background: var(--surface, #f8f9fa);
+      border: 1px solid var(--border, #e0e0e0);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 1.5rem 0;
+    }
+    .ww-about__name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0 0 0.25rem 0;
+    }
+    .ww-about__role {
+      font-size: 0.85rem;
+      opacity: 0.65;
+      margin: 0 0 1rem 0;
+    }
+    .ww-about__bio {
+      font-size: 0.925rem;
+      line-height: 1.65;
+      margin: 0 0 1.25rem 0;
+    }
+    .ww-about__creds {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .ww-cred {
+      background: var(--accent-light, #e8f5e9);
+      color: var(--accent, #2d7a3a);
+      border-radius: 20px;
+      padding: 0.3rem 0.85rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .ww-cta-banner {
+      background: var(--accent, #2d7a3a);
+      color: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .ww-cta-banner h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.2rem;
+    }
+    .ww-cta-banner p {
+      margin: 0 0 1.25rem 0;
+      opacity: 0.85;
+      font-size: 0.925rem;
+    }
+    .ww-cta-banner a {
+      display: inline-block;
+      background: #fff;
+      color: var(--accent, #2d7a3a);
+      border-radius: 8px;
+      padding: 0.6rem 1.5rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .ww-cta-banner a:hover { opacity: 0.85; }
+  </style>
 </head>
 <body>
 
@@ -37,45 +227,124 @@
   <img class="ww-hero__img" src="IMG_2276.jpg" alt="Wasatch Mountains">
   <div class="ww-hero__overlay"></div>
   <div class="ww-hero__content">
-    <div class="ww-hero__label">Environmental Monitoring</div>
-    <h1 class="ww-hero__title">Welcome to Wasatch Watch</h1>
-    <p class="ww-hero__sub">Tracking the environmental health of the Wasatch Front</p>
+    <div class="ww-hero__label">Satellite Environmental Monitoring</div>
+    <h1 class="ww-hero__title">Wasatch Watch</h1>
+    <p class="ww-hero__sub">Monthly satellite-based vegetation and drought reports for the Wasatch Front — powered by Landsat 8 imagery and original research methodology.</p>
   </div>
 </div>
 
 <div class="ww-container">
 
-  <div class="ww-section">
-    <div class="ww-section__tag">Why It Matters</div>
-    <h2>Why Monitor the Wasatch?</h2>
-    <p>The Wasatch Front is experiencing rapid environmental changes, from rising temperatures to worsening air quality. By collecting and analyzing real-world data, we aim to provide insights into these shifts and their impact on local ecosystems and human health.</p>
-    <div class="ww-map-card">
-      <img src="image1.png" alt="Air pollution over Wasatch Front">
+  <div class="ww-metrics">
+    <div class="ww-metric">
+      <span class="ww-metric__value">12+</span>
+      <span class="ww-metric__label">Years of satellite data analyzed</span>
+    </div>
+    <div class="ww-metric">
+      <span class="ww-metric__value">154</span>
+      <span class="ww-metric__label">Monthly composites processed</span>
+    </div>
+    <div class="ww-metric">
+      <span class="ww-metric__value">5.5 sqkm</span>
+      <span class="ww-metric__label">Spatial resolution per pixel</span>
     </div>
   </div>
 
   <div class="ww-section">
-    <div class="ww-section__tag">Vegetation Index</div>
-    <h2>NDVI Trends Over Time</h2>
-    <p>Using satellite imagery, we measure vegetation health through the Normalized Difference Vegetation Index (NDVI). This helps us track long-term changes in plant life, from seasonal shifts to the impact of droughts and urban development.</p>
-    <div class="ww-map-card">
-      <img src="image2.png" alt="NDVI Graph Example">
+    <div class="ww-section__tag">Latest Report</div>
+    <h2>February 2026</h2>
+    <p>Our most recent monthly report analyzing vegetation dynamics, seasonal anomalies, and drought signals across the Wasatch Front.</p>
+
+    <a class="ww-latest" href="reports/r_2_2026.html">
+      <img class="ww-latest__img" src="report_picture/feb26/rp_2_2026_anom.png" alt="February 2026 NDVI Anomaly Map">
+      <div class="ww-latest__body">
+        <span class="ww-latest__eyebrow">Monthly Report · Issue 03</span>
+        <h3 class="ww-latest__title">February 2026 — Snow Drought Signal</h3>
+        <p class="ww-latest__summary">Anomalously high mountain NDVI in February 2026 is not a sign of healthy vegetation — it reflects less snow cover. Utah's ongoing snow drought is showing up in satellite data, with the 2025–26 winter tracking as one of the weakest on record since 2013.</p>
+        <span class="ww-latest__cta">Read Full Report →</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="ww-section">
+    <div class="ww-section__tag">Methodology</div>
+    <h2>What We Measure</h2>
+    <p>Each monthly report combines multiple satellite-derived indices to build a complete picture of vegetation and drought conditions across the Wasatch Front.</p>
+
+    <div class="ww-methods">
+      <div class="ww-method">
+        <span class="ww-method__icon">🌿</span>
+        <h3 class="ww-method__title">NDVI — Normalized Difference Vegetation Index</h3>
+        <p class="ww-method__desc">Measures the relative greenness of an area using Landsat 8 red and near-infrared bands. Useful for tracking seasonal vegetation cycles and long-term trends, with important caveats around snow cover and dormancy interpretation.</p>
+      </div>
+      <div class="ww-method">
+        <span class="ww-method__icon">📊</span>
+        <h3 class="ww-method__title">Seasonal Anomaly Analysis</h3>
+        <p class="ww-method__desc">Each month is compared against its historical average from the 2013–2026 Landsat archive using z-score normalization, isolating true anomalies from expected seasonal variation.</p>
+      </div>
+      <div class="ww-method">
+        <span class="ww-method__icon">❄️</span>
+        <h3 class="ww-method__title">Winter Dormancy Index</h3>
+        <p class="ww-method__desc">A novel metric tracking cumulative winter severity using z-scored NDVI values below a dormancy threshold. Allows direct comparison of winter intensity across years, validated against known drought and snowpack records.</p>
+      </div>
+      <!-- FUTURE ADDITION
+      <div class="ww-method">
+        <span class="ww-method__icon">🛰️</span>
+        <h3 class="ww-method__title">PDI — Photosynthetic Divergence Index</h3>
+        <p class="ww-method__desc">An original index developed through peer-review-ready research comparing Solar-Induced Fluorescence (SIF) and NDVI. PDI demonstrates statistically significant drought precursor capacity, leading conventional drought indices by approximately one month. Historical PDI data (2013–2024) available in the full research results.</p>
+      </div> -->
     </div>
   </div>
 
   <div class="ww-section">
-    <div class="ww-section__tag">Climate Signals</div>
-    <h2>Air Quality &amp; Temperature Changes</h2>
-    <p>Rising temperatures and wildfires contribute to worsening air quality. Our data visualizations illustrate how these factors interact, showing trends in pollution levels, extreme heat days, and their potential effects on public health.</p>
+    <div class="ww-section__tag">Long-Term Trends</div>
+    <h2>The Wasatch Front Since 2013</h2>
+    <p>Beyond monthly snapshots, Wasatch Watch tracks multi-year vegetation and drought trends using the full Landsat 8 archive from March 2013 to present. Key findings from the long-term record include an overall upward trend in summer vegetation, increasing drought stress signals in anomaly-adjusted indices, and the 2025–26 winter tracking as anomalously snow-poor relative to the historical record.</p>
+
     <div class="ww-map-card">
-      <img src="image3.png" alt="Wasatch Air Quality">
+      <div class="ww-map-card__header">
+        <span class="ww-map-card__title">NDVI Trends 2013–2026</span>
+        <span class="ww-badge ww-badge--ndvi">Long-Term Record</span>
+      </div>
+      <img src="report_picture/feb26/rp_trends_26.png" alt="NDVI Trends 2013-2026">
+      <div class="ww-map-card__caption">Monthly NDVI means · Wasatch Front bounding region · March 2013 – February 2026</div>
     </div>
+
+    <div class="ww-callout">
+      <div class="ww-callout__label">Key Finding</div>
+      <p>The 2025–26 winter dormancy signal is among the weakest in the 13-year record, consistent with documented snow drought conditions across northern Utah. This signal is visible in both raw NDVI and anomaly-adjusted indices.</p>
+    </div>
+  </div>
+
+  <div class="ww-section">
+    <div class="ww-section__tag">About</div>
+    <h2>About the Researcher</h2>
+
+    <div class="ww-about">
+      <h3 class="ww-about__name">Scott Vars</h3>
+      <p class="ww-about__role">10th Grade · Salt Lake City, Utah</p>
+      <p class="ww-about__bio">Wasatch Watch is an independent environmental monitoring project founded and operated by Scott Vars. The platform grew out of multi-year science fair research comparing satellite vegetation indices for drought detection in the Wasatch Front. The underlying research was recognized at the Utah Science and Engineering Fair and qualified for the GENIUS Olympiad international science competition.</p>
+      <p class="ww-about__bio">All data collection, analysis, visualization, and writing is conducted independently using Google Earth Engine, Python, and the USGS Landsat 8 archive.</p>
+      <div class="ww-about__creds">
+        <span class="ww-cred">USEF 2026 Grand Prize</span>
+        <span class="ww-cred">GENIUS Olympiad Qualifier</span>
+        <span class="ww-cred">NASA Earth Systems Science Award</span>
+        <span class="ww-cred">Google Earth Engine</span>
+        <span class="ww-cred">Landsat 8 · MODIS · GOSIF</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ww-cta-banner">
+    <h3>Follow the Wasatch Front Month by Month</h3>
+    <p>New reports published monthly. View the full archive or explore the underlying research data.</p>
+    <a href="monthlyreports.html">View All Reports →</a>
   </div>
 
 </div>
 
 <footer class="ww-footer">
-  © 2025 <a href="index.html">Wasatch Watch</a> · Protecting the Future of the Wasatch
+  © 2025–2026 <a href="index.html">Wasatch Watch</a> · Protecting the Future of the Wasatch
 </footer>
 
 <script src="script.js"></script>
