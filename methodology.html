@@ -224,7 +224,7 @@
         </div>
         <div class="ww-pipeline__body">
           <h3 class="ww-pipeline__title">Generate Raw NDVI Composites</h3>
-          <p class="ww-pipeline__desc">For each month, all available Landsat 8 scenes covering the Wasatch Front bounding box are filtered and combined into a single median composite image. Using the median rather than a single scene reduces the impact of cloud cover, sensor noise, and other transient artifacts — any given pixel takes the middle value across all cloud-free observations that month.</p>
+          <p class="ww-pipeline__desc">For each month, all available Landsat 8 scenes covering the Wasatch Front bounding box are filtered and combined into a single median composite image. Using the median rather than a single scene reduces the impact of cloud cover, sensor noise, and other remote sensing artifacts. Any given pixel takes the middle value across all cloud-free observations that month.</p>
           <p class="ww-pipeline__desc">NDVI is then computed from the resulting composite using the standard formula, which compares the near-infrared (NIR) and red reflectance bands. The result is a per-pixel NDVI value ranging from -1 to 1, where higher values indicate more and healthier vegetation. Vegetated surfaces often only go as low as 0, while non-vegetated surfaces, specifically open water like Utah Lake or the Great Salt Lake, register negative values. This is part of the reason why lakes may register positive change on month-over-month or year-over-year maps, as subtracting a negative value yields a positive one.</p>
           <div class="ww-formula">
             <span class="ww-formula__label">NDVI Formula</span>
@@ -251,10 +251,10 @@
             <span class="ww-formula__label">Anomaly Formula</span>
             Anomaly = NDVI_current − mean(NDVI_same_month, 2013–2026)
           </div>
-          <p class="ww-pipeline__desc">This approach removes the dominant seasonal signal — the predictable rise and fall of vegetation through the year — and isolates what is genuinely unusual. A drought in August shows up clearly because August vegetation is being compared against other Augusts, not against January.</p>
+          <p class="ww-pipeline__desc">This approach removes the dominant seasonal signal, the predictable rise and fall of vegetation through the year — and isolates what is genuinely unusual. A drought in August shows up clearly because August vegetation is being compared against other Augusts, not against January.</p>
           <div class="ww-callout ww-callout--warn">
             <div class="ww-callout__label">Important Caveat</div>
-            <p>Anomaly maps do not distinguish between causes. Above-average NDVI in winter can reflect reduced snow cover just as easily as healthier vegetation — and in most cases during the 2025–26 season, the former is the correct interpretation. Each report addresses these interpretation ambiguities explicitly.</p>
+            <p>Anomaly maps do not distinguish between causes. Above-average NDVI in winter can reflect reduced snow cover just as easily as healthier vegetation, and in most cases during the 2025–26 season, the former is the correct interpretation. Each report addresses these interpretation ambiguities explicitly.</p>
           </div>
         </div>
       </div>
@@ -286,7 +286,6 @@
     </div>
   </div>
 
-  <!-- LIMITATIONS -->
   <div class="ww-section">
     <div class="ww-section__tag">Limitations</div>
     <h2>What This Analysis Cannot Tell You</h2>
@@ -316,7 +315,6 @@
     </div>
   </div>
 
-  <!-- CODE -->
   <div class="ww-section">
     <div class="ww-section__tag">Reproducibility</div>
     <h2>Code and Data</h2>
