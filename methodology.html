@@ -245,13 +245,13 @@
         </div>
         <div class="ww-pipeline__body">
           <h3 class="ww-pipeline__title">Compute Seasonal Anomalies</h3>
-          <p class="ww-pipeline__desc">Raw NDVI values alone are hard to interpret. A January reading of 0.2 could be normal for winter or anomalously low — without historical context it's impossible to know. The seasonal anomaly map answers the question: is this month above or below what we'd expect for this time of year?</p>
+          <p class="ww-pipeline__desc">Raw NDVI values alone are hard to interpret. A January reading of 0.2 could be normal for winter or anomalously low however without historical context it's impossible to know. The seasonal anomaly map answers the question: is this month above or below what we'd expect for this time of year?</p>
           <p class="ww-pipeline__desc">For each month, a historical baseline is computed by averaging all same-month composites from the full 2013–2026 archive. The current month's NDVI is then subtracted from that baseline pixel by pixel, producing a signed difference map where positive values indicate above-average vegetation and negative values indicate below-average vegetation relative to historical norms for that month.</p>
           <div class="ww-formula">
             <span class="ww-formula__label">Anomaly Formula</span>
             Anomaly = NDVI_current − mean(NDVI_same_month, 2013–2026)
           </div>
-          <p class="ww-pipeline__desc">This approach removes the dominant seasonal signal, the predictable rise and fall of vegetation through the year — and isolates what is genuinely unusual. A drought in August shows up clearly because August vegetation is being compared against other Augusts, not against January.</p>
+          <p class="ww-pipeline__desc">This approach removes the dominant seasonal signal, the predictable rise and fall of vegetation through the year and isolates what is genuinely unusual. A drought in August shows up clearly because August vegetation is being compared against other Augusts, not against January.</p>
           <div class="ww-callout ww-callout--warn">
             <div class="ww-callout__label">Important Caveat</div>
             <p>Anomaly maps do not distinguish between causes. Above-average NDVI in winter can reflect reduced snow cover just as easily as healthier vegetation, and in most cases during the 2025–26 season, the former is the correct interpretation. Each report addresses these interpretation ambiguities explicitly.</p>
@@ -294,11 +294,11 @@
     <div class="ww-limitations">
       <div class="ww-limitation">
         <span class="ww-limitation__icon">❄️</span>
-        <p><strong>Snow cover and vegetation are confounded.</strong> NDVI cannot distinguish between snow-covered ground and low-vegetation ground — both produce low values. Similarly, snowmelt can raise NDVI without any new plant growth. Every winter report addresses this explicitly.</p>
+        <p><strong>Snow cover and vegetation are confounded.</strong> NDVI cannot distinguish between snow-covered ground and low-vegetation ground because both produce low values. Similarly, snowmelt can raise NDVI without any new plant growth. Every winter report addresses this explicitly.</p>
       </div>
       <div class="ww-limitation">
         <span class="ww-limitation__icon">🌫️</span>
-        <p><strong>Cloud cover reduces data quality.</strong> Months with persistent cloud cover produce fewer usable Landsat scenes. The median composite approach mitigates this but does not eliminate it — heavily clouded months may have fewer observations per pixel and higher uncertainty.</p>
+        <p><strong>Cloud cover reduces data quality.</strong> Months with persistent cloud cover produce fewer usable Landsat scenes. The median composite approach mitigates this but does not eliminate it as heavily clouded months may have fewer observations per pixel and higher uncertainty.</p>
       </div>
       <div class="ww-limitation">
         <span class="ww-limitation__icon">🟥</span>
