@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Methodology — Wasatch Watch</title>
+  <link rel="icon" type="image/png" href="/croppedmaps.png">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .ww-pipeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 1.5rem 0;
+      position: relative;
+    }
+    .ww-pipeline__step {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 1.25rem;
+      align-items: flex-start;
+      position: relative;
+    }
+    .ww-pipeline__step:not(:last-child) {
+      padding-bottom: 2rem;
+    }
+    .ww-pipeline__left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+    .ww-pipeline__num {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--accent, #2d7a3a);
+      color: #fff;
+      font-weight: 800;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+    .ww-pipeline__line {
+      width: 2px;
+      flex: 1;
+      background: var(--border, #e0e0e0);
+      min-height: 2rem;
+      margin-top: 4px;
+    }
+    .ww-pipeline__body {
+      padding-top: 0.5rem;
+    }
+    .ww-pipeline__title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem 0;
+    }
+    .ww-pipeline__desc {
+      font-size: 0.925rem;
+      line-height: 1.65;
+      margin: 0 0 0.75rem 0;
+      opacity: 0.85;
+    }
+
+    .ww-formula {
+      background: var(--surface, #f8f9fa);
+      border: 1px solid var(--border, #e0e0e0);
+      border-left: 4px solid var(--accent, #2d7a3a);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.95rem;
+      margin: 0.75rem 0;
+      overflow-x: auto;
+    }
+    .ww-formula__label {
+      font-family: inherit;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent, #2d7a3a);
+      display: block;
+      margin-bottom: 0.4rem;
+      font-family: system-ui, sans-serif;
+    }
+
+    .ww-datasource {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1.25rem 0;
+    }
+    .ww-ds-card {
+      background: var(--surface, #f8f9fa);
+      border: 1px solid var(--border, #e0e0e0);
+      border-radius: 10px;
+      padding: 1.1rem;
+    }
+    .ww-ds-card__name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin: 0 0 0.3rem 0;
+    }
+    .ww-ds-card__detail {
+      font-size: 0.82rem;
+      opacity: 0.72;
+      line-height: 1.5;
+      margin: 0;
+    }
+    @media (max-width: 640px) {
+      .ww-datasource { grid-template-columns: 1fr; }
+      .ww-pipeline__step { grid-template-columns: 44px 1fr; }
+    }
+
+    .ww-limitations {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin: 1.25rem 0;
+    }
+    .ww-limitation {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 0.75rem;
+      align-items: flex-start;
+      font-size: 0.925rem;
+      line-height: 1.6;
+    }
+    .ww-limitation__icon {
+      font-size: 1rem;
+      margin-top: 0.1rem;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="ww-nav">
+  <a class="ww-nav__logo" href="index.html">⬡ Wasatch Watch</a>
+  <button class="ww-nav__burger">☰</button>
+  <ul class="ww-nav__links">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-dropdown">
+      <a href="#">Data</a>
+      <ul class="ww-nav__dropdown">
+        <li><a href="methodology.html">🔎 Methodology</a></li>
+        <li><a href="repo.html">📂 Repository</a></li>
+        <li><a href="monthlyreports.html">📋 Monthly Reports</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">About</a>
+      <ul class="ww-nav__dropdown">
+        <li><a href="mission.html">🌍 The Mission</a></li>
+      </ul>
+    </li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="ww-hero">
+  <img class="ww-hero__img" src="IMG_2276.jpg" alt="Wasatch Mountains">
+  <div class="ww-hero__overlay"></div>
+  <div class="ww-hero__content">
+    <div class="ww-hero__label">How It Works</div>
+    <h1 class="ww-hero__title">Methodology</h1>
+    <p class="ww-hero__sub">How Wasatch Watch collects, processes, and interprets satellite data to produce monthly vegetation reports.</p>
+  </div>
+</div>
+
+<div class="ww-container">
+
+  <div class="ww-section">
+    <div class="ww-section__tag">Overview</div>
+    <h2>From Satellite to Report</h2>
+    <p>Every monthly Wasatch Watch report is produced entirely from publicly available satellite data using Google Earth Engine and Python. The pipeline runs in three main stages: generating raw NDVI composites, computing seasonal anomalies, and producing difference maps. Each stage builds on the last to give a complete picture of what vegetation is doing and why.</p>
+
+    <div class="ww-callout">
+      <div class="ww-callout__label">Data Foundation</div>
+      <p>All NDVI data is derived from the Landsat 8 satellite archive, which provides consistent, calibrated surface reflectance imagery from March 2013 to present. This gives Wasatch Watch a 12+ year historical baseline to compare any given month against.</p>
+    </div>
+  </div>
+
+  <div class="ww-section">
+    <div class="ww-section__tag">Data Sources</div>
+    <h2>Where the Data Comes From</h2>
+    <p>All data used by Wasatch Watch is publicly available and free to access. The primary source is the USGS Landsat 8 archive, accessed through Google Earth Engine.</p>
+
+    <div class="ww-datasource">
+      <div class="ww-ds-card">
+        <h3 class="ww-ds-card__name">Landsat 8 — USGS</h3>
+        <p class="ww-ds-card__detail">Primary data source. Provides surface reflectance imagery at 30m native resolution. Used to compute NDVI for every month from March 2013 to present. Accessed via Google Earth Engine.</p>
+      </div>
+      <div class="ww-ds-card">
+        <h3 class="ww-ds-card__name">Google Earth Engine</h3>
+        <p class="ww-ds-card__detail">Cloud-based geospatial processing platform. Used to filter, composite, and export Landsat imagery for the Wasatch Front bounding region without downloading raw data locally.</p>
+      </div>
+      <div class="ww-ds-card">
+        <h3 class="ww-ds-card__name">NOAA NCEI</h3>
+        <p class="ww-ds-card__detail">National Centers for Environmental Information. Used to cross-reference monthly climate summaries and drought reports for narrative context in monthly reports.</p>
+      </div>
+      <div class="ww-ds-card">
+        <h3 class="ww-ds-card__name">Python — rasterio / NumPy</h3>
+        <p class="ww-ds-card__detail">All post-processing, normalization, difference map generation, and visualization is done in Python using rasterio for raster handling and NumPy for array operations. Plots generated with Matplotlib.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ww-section">
+    <div class="ww-section__tag">Processing Pipeline</div>
+    <h2>Step by Step</h2>
+    <p>The following pipeline is run for every monthly report. Steps 1 through 3 are sequential and each depends on the output of the previous step.</p>
+
+    <div class="ww-pipeline">
+
+      <div class="ww-pipeline__step">
+        <div class="ww-pipeline__left">
+          <div class="ww-pipeline__num">1</div>
+          <div class="ww-pipeline__line"></div>
+        </div>
+        <div class="ww-pipeline__body">
+          <h3 class="ww-pipeline__title">Generate Raw NDVI Composites</h3>
+          <p class="ww-pipeline__desc">For each month, all available Landsat 8 scenes covering the Wasatch Front bounding box are filtered and combined into a single median composite image. Using the median rather than a single scene reduces the impact of cloud cover, sensor noise, and other transient artifacts — any given pixel takes the middle value across all cloud-free observations that month.</p>
+          <p class="ww-pipeline__desc">NDVI is then computed from the resulting composite using the standard formula, which compares the near-infrared (NIR) and red reflectance bands. The result is a per-pixel NDVI value ranging from -1 to 1, where higher values indicate more and healthier vegetation. Vegetated surfaces often only go as low as 0, while non-vegetated surfaces, specifically open water like Utah Lake or the Great Salt Lake, register negative values. This is part of the reason why lakes may register positive change on month-over-month or year-over-year maps, as subtracting a negative value yields a positive one.</p>
+          <div class="ww-formula">
+            <span class="ww-formula__label">NDVI Formula</span>
+            NDVI = (NIR − Red) / (NIR + Red)
+          </div>
+          <p class="ww-pipeline__desc">The composite is exported as a GeoTIFF at 5.5km resolution, a deliberate downscale from Landsat's native 30m, to keep file sizes manageable across the 12+ year archive while preserving meaningful spatial patterns at the regional scale.</p>
+          <div class="ww-callout ww-callout--note">
+            <div class="ww-callout__label">Why 5.5km Resolution?</div>
+            <p>At the scale of the full Wasatch Front bounding region, 5.5km pixels provide sufficient spatial detail to distinguish mountain, valley, and urban zones while keeping the monthly archive at a practical file size. Individual pixel-level analysis is not the goal, regional pattern detection is.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ww-pipeline__step">
+        <div class="ww-pipeline__left">
+          <div class="ww-pipeline__num">2</div>
+          <div class="ww-pipeline__line"></div>
+        </div>
+        <div class="ww-pipeline__body">
+          <h3 class="ww-pipeline__title">Compute Seasonal Anomalies</h3>
+          <p class="ww-pipeline__desc">Raw NDVI values alone are hard to interpret. A January reading of 0.2 could be normal for winter or anomalously low — without historical context it's impossible to know. The seasonal anomaly map answers the question: is this month above or below what we'd expect for this time of year?</p>
+          <p class="ww-pipeline__desc">For each month, a historical baseline is computed by averaging all same-month composites from the full 2013–2026 archive. The current month's NDVI is then subtracted from that baseline pixel by pixel, producing a signed difference map where positive values indicate above-average vegetation and negative values indicate below-average vegetation relative to historical norms for that month.</p>
+          <div class="ww-formula">
+            <span class="ww-formula__label">Anomaly Formula</span>
+            Anomaly = NDVI_current − mean(NDVI_same_month, 2013–2026)
+          </div>
+          <p class="ww-pipeline__desc">This approach removes the dominant seasonal signal — the predictable rise and fall of vegetation through the year — and isolates what is genuinely unusual. A drought in August shows up clearly because August vegetation is being compared against other Augusts, not against January.</p>
+          <div class="ww-callout ww-callout--warn">
+            <div class="ww-callout__label">Important Caveat</div>
+            <p>Anomaly maps do not distinguish between causes. Above-average NDVI in winter can reflect reduced snow cover just as easily as healthier vegetation — and in most cases during the 2025–26 season, the former is the correct interpretation. Each report addresses these interpretation ambiguities explicitly.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ww-pipeline__step">
+        <div class="ww-pipeline__left">
+          <div class="ww-pipeline__num">3</div>
+        </div>
+        <div class="ww-pipeline__body">
+          <h3 class="ww-pipeline__title">Generate Difference Maps</h3>
+          <p class="ww-pipeline__desc">Where anomaly maps compare a month to its historical average, difference maps compare two specific months directly. Wasatch Watch produces two difference maps for every report: month-over-month (current vs. previous month) and year-over-year (current month vs. same month last year).</p>
+          <p class="ww-pipeline__desc">Both are computed the same way — subtract one raw NDVI composite from another pixel by pixel. The result is a signed difference map where blue indicates NDVI increase and red indicates NDVI decrease between the two time points.</p>
+          <div class="ww-formula">
+            <span class="ww-formula__label">Month-over-Month</span>
+            Difference = NDVI_current_month − NDVI_previous_month
+          </div>
+          <div class="ww-formula">
+            <span class="ww-formula__label">Year-over-Year</span>
+            Difference = NDVI_current_month − NDVI_same_month_last_year
+          </div>
+          <p class="ww-pipeline__desc">Difference maps are computed from raw NDVI prior to any normalization. This preserves the actual magnitude of change rather than a normalized relative score, making it easier to assess whether observed differences are ecologically meaningful or within normal noise.</p>
+          <div class="ww-callout ww-callout--warn">
+            <div class="ww-callout__label">Remote Sensing Artifacts</div>
+            <p>Difference maps can produce spurious values over water bodies like the Great Salt Lake and Utah Lake due to surface reflectance variability unrelated to vegetation. These artifacts are identified and flagged explicitly in each report and should be disregarded.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LIMITATIONS -->
+  <div class="ww-section">
+    <div class="ww-section__tag">Limitations</div>
+    <h2>What This Analysis Cannot Tell You</h2>
+    <p>Transparency about limitations is a core part of the Wasatch Watch methodology. The following are known constraints on interpretation that apply to every report.</p>
+
+    <div class="ww-limitations">
+      <div class="ww-limitation">
+        <span class="ww-limitation__icon">❄️</span>
+        <p><strong>Snow cover and vegetation are confounded.</strong> NDVI cannot distinguish between snow-covered ground and low-vegetation ground — both produce low values. Similarly, snowmelt can raise NDVI without any new plant growth. Every winter report addresses this explicitly.</p>
+      </div>
+      <div class="ww-limitation">
+        <span class="ww-limitation__icon">🌫️</span>
+        <p><strong>Cloud cover reduces data quality.</strong> Months with persistent cloud cover produce fewer usable Landsat scenes. The median composite approach mitigates this but does not eliminate it — heavily clouded months may have fewer observations per pixel and higher uncertainty.</p>
+      </div>
+      <div class="ww-limitation">
+        <span class="ww-limitation__icon">🟥</span>
+        <p><strong>NDVI measures greenness, not health.</strong> A plant under drought stress can appear green until late in the stress cycle. NDVI is a useful but imperfect proxy for vegetation health. This limitation is part of the motivation for the ongoing research into more direct photosynthetic indicators.</p>
+      </div>
+      <div class="ww-limitation">
+        <span class="ww-limitation__icon">📐</span>
+        <p><strong>5.5km resolution loses fine spatial detail.</strong> Urban/suburban boundaries, individual riparian corridors, and small forest patches are not resolvable at this scale. The analysis is designed for regional pattern detection, not site-level assessment.</p>
+      </div>
+      <div class="ww-limitation">
+        <span class="ww-limitation__icon">📊</span>
+        <p><strong>Anomaly baselines evolve over time.</strong> As more years are added to the archive the historical mean shifts slightly. Anomaly values from early years (2013–2015) are computed against a shorter baseline than recent years and may be slightly less stable.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CODE -->
+  <div class="ww-section">
+    <div class="ww-section__tag">Reproducibility</div>
+    <h2>Code and Data</h2>
+    <p>All code used to generate Wasatch Watch maps and reports is open source and available in the GitHub repository. The Google Earth Engine scripts for composite generation and the Python post-processing notebooks are both included. The full processed data archive is available in the linked Google Drive folder.</p>
+
+    <div class="ww-callout ww-callout--note">
+      <div class="ww-callout__label">Access the Code</div>
+      <p>Full repository, Colab notebooks, and processed data available on the <a href="repo.html">Data &amp; Repository</a> page.</p>
+    </div>
+  </div>
+
+</div>
+
+<footer class="ww-footer">
+  © 2025–2026 <a href="index.html">Wasatch Watch</a> · Protecting the Future of the Wasatch
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
