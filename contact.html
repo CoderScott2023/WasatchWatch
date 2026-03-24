@@ -7,37 +7,91 @@
   <link rel="icon" type="image/png" href="/croppedmaps.png">
   <link rel="stylesheet" href="styles.css">
   <style>
-    .contact-grid {
+    .ww-contact-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      margin: 2rem 0;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin: 1.5rem 0;
     }
-    .contact-item {
-      background: var(--surface);
-      padding: 1.75rem 2rem;
+    .ww-contact-card {
+      background: var(--surface, #f8f9fa);
+      border: 1px solid var(--border, #e0e0e0);
+      border-radius: 12px;
+      padding: 1.75rem 1.5rem;
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.6rem;
+      transition: box-shadow 0.2s;
     }
-    .contact-item__label {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
+    .ww-contact-card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .ww-contact-card__icon {
+      font-size: 1.75rem;
+      display: block;
+    }
+    .ww-contact-card__label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--muted);
+      opacity: 0.55;
     }
-    .contact-item__value {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      color: var(--accent);
+    .ww-contact-card__value {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--accent, #2d7a3a);
     }
-    .contact-item__value a {
-      color: var(--accent);
+    .ww-contact-card__value a {
+      color: var(--accent, #2d7a3a);
+      text-decoration: none;
+    }
+    .ww-contact-card__value a:hover {
+      text-decoration: underline;
+    }
+    .ww-contact-card__desc {
+      font-size: 0.83rem;
+      opacity: 0.65;
+      line-height: 1.5;
+      margin: 0;
+    }
+    @media (max-width: 640px) {
+      .ww-contact-grid { grid-template-columns: 1fr; }
+    }
+
+    .ww-collab {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1.25rem 0;
+    }
+    .ww-collab__item {
+      background: var(--surface, #f8f9fa);
+      border: 1px solid var(--border, #e0e0e0);
+      border-radius: 10px;
+      padding: 1.25rem;
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+    .ww-collab__icon {
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .ww-collab__title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin: 0 0 0.25rem 0;
+    }
+    .ww-collab__desc {
+      font-size: 0.83rem;
+      opacity: 0.72;
+      line-height: 1.5;
+      margin: 0;
+    }
+    @media (max-width: 640px) {
+      .ww-collab { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -71,43 +125,93 @@
   <div class="ww-hero__overlay"></div>
   <div class="ww-hero__content">
     <div class="ww-hero__label">Get In Touch</div>
-    <h1 class="ww-hero__title">Contact Us</h1>
+    <h1 class="ww-hero__title">Contact</h1>
+    <p class="ww-hero__sub">Questions, feedback, partnership inquiries, or data requests: reach out through any of the channels below.</p>
   </div>
 </div>
 
 <div class="ww-container">
+
   <div class="ww-section">
     <div class="ww-section__tag">Reach Out</div>
-    <h2>Reach Out to Me</h2>
-    <p>If you have any questions, suggestions, or want to contribute, feel free to reach out through any of the platforms below.</p>
+    <h2>Get in Touch</h2>
+    <p>Wasatch Watch is an independent research project run by one person. Response times may vary but all messages are read.</p>
 
-    <div class="contact-grid">
-      <div class="contact-item">
-        <span class="contact-item__label">Email</span>
-        <span class="contact-item__value">
+    <div class="ww-contact-grid">
+      <div class="ww-contact-card">
+        <span class="ww-contact-card__icon">✉️</span>
+        <span class="ww-contact-card__label">Email</span>
+        <span class="ww-contact-card__value">
           <a href="mailto:scottvars@wasatchwatch.org">scottvars@wasatchwatch.org</a>
         </span>
+        <p class="ww-contact-card__desc">Best for partnership inquiries, data requests, or detailed questions about the research.</p>
       </div>
-      <div class="contact-item">
-        <span class="contact-item__label">Instagram</span>
-        <span class="contact-item__value">
-          <a href="https://instagram.com" target="_blank">The official account</a>
+      <div class="ww-contact-card">
+        <span class="ww-contact-card__icon">📸</span>
+        <span class="ww-contact-card__label">Instagram</span>
+        <span class="ww-contact-card__value">
+          <a href="https://instagram.com" target="_blank">@wasatchwatch</a>
         </span>
+        <p class="ww-contact-card__desc">Monthly report summaries, map highlights, and updates on Wasatch Front conditions.</p>
       </div>
-      <div class="contact-item">
-        <span class="contact-item__label">GitHub</span>
-        <span class="contact-item__value">
-          <a href="https://github.com/CoderScott2023/WasatchWatch" target="_blank">WasatchWatchCode</a>
+      <div class="ww-contact-card">
+        <span class="ww-contact-card__icon">💻</span>
+        <span class="ww-contact-card__label">GitHub</span>
+        <span class="ww-contact-card__value">
+          <a href="https://github.com/CoderScott2023/WasatchWatch" target="_blank">CoderScott2023/WasatchWatch</a>
         </span>
+        <p class="ww-contact-card__desc">Open source code, issue tracking, and contributions. Pull requests welcome.</p>
       </div>
     </div>
-
-    <p>Check out our repository and contribute on GitHub: <a href="https://github.com/CoderScott2023/WasatchWatch">Wasatch Watch GitHub</a></p>
   </div>
+
+  <!-- COLLABORATION -->
+  <div class="ww-section">
+    <div class="ww-section__tag">Collaboration</div>
+    <h2>Ways to Work Together</h2>
+    <p>Wasatch Watch is open to collaboration with researchers, educators, journalists, and organizations working on water, drought, or environmental issues in the Wasatch Front region.</p>
+
+    <div class="ww-collab">
+      <div class="ww-collab__item">
+        <span class="ww-collab__icon">🤝</span>
+        <div>
+          <h3 class="ww-collab__title">Partnership Inquiries</h3>
+          <p class="ww-collab__desc">Organizations interested in incorporating Wasatch Watch data into public-facing work, reports, or advocacy materials are welcome to reach out via email.</p>
+        </div>
+      </div>
+      <div class="ww-collab__item">
+        <span class="ww-collab__icon">📰</span>
+        <div>
+          <h3 class="ww-collab__title">Press and Media</h3>
+          <p class="ww-collab__desc">Journalists covering Utah water, drought, or snowpack issues are welcome to reference Wasatch Watch data and reports with attribution.</p>
+        </div>
+      </div>
+      <div class="ww-collab__item">
+        <span class="ww-collab__icon">🎓</span>
+        <div>
+          <h3 class="ww-collab__title">Academic and Research</h3>
+          <p class="ww-collab__desc">Researchers interested in the underlying methodology or data, including the full 2013–2026 Landsat archive, can access it via the repository page or reach out directly.</p>
+        </div>
+      </div>
+      <div class="ww-collab__item">
+        <span class="ww-collab__icon">🐛</span>
+        <div>
+          <h3 class="ww-collab__title">Data Issues or Corrections</h3>
+          <p class="ww-collab__desc">Spotted an error, artifact, or methodological concern? Open an issue on GitHub or send an email. Transparency and accuracy are core to this project.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ww-callout ww-callout--note">
+    <div class="ww-callout__label">A Note on Response Times</div>
+    <p>Wasatch Watch is maintained by a single researcher alongside school and other commitments. Email responses may take a few days. GitHub issues are monitored regularly.</p>
+  </div>
+
 </div>
 
 <footer class="ww-footer">
-  © 2025 <a href="index.html">Wasatch Watch</a> · Protecting the Future of the Wasatch
+  © 2025–2026 <a href="index.html">Wasatch Watch</a> · Protecting the Future of the Wasatch
 </footer>
 
 <script src="script.js"></script>
