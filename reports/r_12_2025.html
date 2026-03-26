@@ -17,9 +17,9 @@
     <li class="has-dropdown">
       <a href="#">Data</a>
       <ul class="ww-nav__dropdown">
-        <li><a href="methodology.html">🔎 Methodology</a></li>
-        <li><a href="repo.html">📂 Repository</a></li>
-        <li><a href="monthlyreports.html">📋 Monthly Reports</a></li>
+        <li><a href="../methodology.html">🔎 Methodology</a></li>
+        <li><a href="../repo.html">📂 Repository</a></li>
+        <li><a href="../monthlyreports.html">📋 Monthly Reports</a></li>
       </ul>
     </li>
     <li class="has-dropdown">
@@ -39,6 +39,7 @@
     <div class="ww-hero__label">Monthly Report · Issue 01</div>
     <h1 class="ww-hero__title">December 2025</h1>
     <p class="ww-hero__sub">Vegetation dynamics across the Wasatch Front</p>
+    <p class="ww-hero__sub">By Scott Vars</p>
   </div>
 </div>
 
@@ -46,102 +47,149 @@
 
   <div class="ww-stats">
     <div class="ww-stat">
-      <span class="ww-stat__label">Month-over-Month Change</span>
+      <span class="ww-stat__label">Month-over-Month</span>
       <span class="ww-stat__value ww-stat__value--down">↓ NDVI</span>
       <span class="ww-stat__note">Nov 2025 → Dec 2025</span>
     </div>
     <div class="ww-stat">
-      <span class="ww-stat__label">Year-over-Year Change</span>
-      <span class="ww-stat__value ww-stat__value--down">↓ Slight</span>
+      <span class="ww-stat__label">Year-over-Year</span>
+      <span class="ww-stat__value ww-stat__value--up">↑ NDVI</span>
       <span class="ww-stat__note">Dec 2024 → Dec 2025</span>
     </div>
     <div class="ww-stat">
       <span class="ww-stat__label">Primary Driver</span>
-      <span class="ww-stat__value ww-stat__value--sm">Snow + Drought</span>
-      <span class="ww-stat__note">Seasonal & interannual signal</span>
+      <span class="ww-stat__value ww-stat__value--sm">Increased Temperatures</span>
+      <span class="ww-stat__note">Delayed snow signal</span>
     </div>
   </div>
 
-  <!-- SECTION 1 -->
   <div class="ww-section">
     <div class="ww-section__tag">Current Month</div>
     <h2>December 2025 NDVI</h2>
-    <p>During December 2025, we see an NDVI map of the Wasatch Front with values much less prominent than November. The NDVI values across the Wasatch Front seemed to hover in between levels of 0.6–0.8 across a min-max normalized scale of 0–1. The Great Salt Lake seemed to hover around levels of around 0.1–0.3, which while this is higher than last month, it is important to note that NDVI is a relative index, so it measures compared to the surrounding area. The Great Salt Lake increasing in NDVI is likely not an increase in vegetation, and rather a decrease in surrounding NDVI, leading to a lesser deviation.</p>
+    <p>Raw vegetation index across the Wasatch Front for December 2025. Much of the Wasatch Front lay within the 0-0.3 range, with small, individual outliers at upwards of 0.4. The lake values (Great Salt Lake and Utah Lake), are both at 0 as normal. Winter NDVI values are inherently low across the region as we settle into winter.</p>
 
     <div class="ww-map-card">
       <div class="ww-map-card__header">
         <span class="ww-map-card__title">NDVI — December 2025</span>
         <span class="ww-badge ww-badge--ndvi">Raw NDVI</span>
       </div>
-      <img src="../report_picture/rp_12_2025.png" alt="December 2025 NDVI Map">
+      <img src="../report_picture/dec25/rp_12_2025.png" alt="December 2025 NDVI Map">
       <div class="ww-map-card__caption">Landsat 8 median composite · 5.5km resolution · Wasatch Front bounding region</div>
     </div>
   </div>
 
-  <!-- SECTION 2 -->
   <div class="ww-section">
-    <div class="ww-section__tag">Month-over-Month</div>
-    <h2>Change from November 2025</h2>
-    <p>We also measured last month's (November 2025) median NDVI for comparison, which showed a substantial decrease in the last month (disregarding the lake, as explained above). The difference map below illustrates the loss in vegetation, which is expected for winter months especially as snowfall can mask vegetation. Additionally, due to the late winter this year, this could be a byproduct of a substantial amount of snow precipitation in December, while there was little in November.</p>
+    <div class="ww-section__tag">Seasonal Anomaly</div>
+    <h2>December 2025 Compared to Historical Decembers</h2>
+    <p>NDVI was higher in December 2025 comparative to the historical average, seeing an increase of about +.023 in the mean NDVI for the month. We can see its a pretty blue sweep across the entire front, although there is a large red area around the Salt Lake Valley and Utah Lake areas. While this could be attributed to the little snow we received masking vegetation, it is more likely this was drought or stressed vegetation in the Valley as we received very little snow throughout December. The increase in vegetation in the mountainous areas is also concerning as this could mean we are having a later winter and more vegetation is peeking through what would otherwise be snowpack.</p>
 
-    <div class="ww-map-card">
-      <div class="ww-map-card__header">
-        <span class="ww-map-card__title">Difference Map — Nov 2025 → Dec 2025</span>
-        <span class="ww-badge ww-badge--down">↓ Net Decrease</span>
-      </div>
-      <img src="../report_picture/rp_12_2025_diff.png" alt="Nov to Dec 2025 Difference Map">
-      <div class="ww-map-card__caption">Blue = NDVI increase · Red = NDVI decrease · Values represent absolute NDVI change</div>
+    <div class="ww-callout">
+      <div class="ww-callout__label">Key Finding</div>
+      <p>Typically, during winter months, NDVI is lower as plants start to stop photosynthesizing and began to be masked by snowpack. An increase in vegetation could be a warning signal of a later winter.</p>
     </div>
 
     <div class="ww-map-card">
       <div class="ww-map-card__header">
-        <span class="ww-map-card__title">NDVI — November 2025</span>
-        <span class="ww-badge ww-badge--neutral">Previous Month</span>
+        <span class="ww-map-card__title">Anomaly Map — Dec 2025</span>
+        <span class="ww-badge ww-badge--up">↑ Net Increase</span>
       </div>
-      <img src="../report_picture/rp_11_2025.png" alt="November 2025 NDVI Map">
+      <img src="../report_picture/dec25/rp_12_2025_anom.png" alt="December 2025 Seasonal Anomaly Map">
+      <div class="ww-map-card__caption">Blue = NDVI increase · Red = NDVI decrease · Values represent absolute NDVI change</div>
     </div>
   </div>
 
-  <!-- SECTION 3 -->
+  <div class="ww-section">
+    <div class="ww-section__tag">Month-over-Month</div>
+    <h2>Change from November 2025</h2>
+    <p>NDVI decreased very rapidly from November to December of 2025, with a mean change of -.061. While this may be seem like a concerning value, this is quite typical of what we see during October-December as plants stop photosynthesizing in preparation for winter, as stated above. This drops the NDVI significantly, but it is not usually a concern. Although, a decrease of .061 may seem to low, as typically during above average winters tend to be a decrease of greater than .1, although this is not completely indicative of a below-average winter as we have seen record breaking winters only have a decrease of .06-.07. For example, the 2022-2023 season only had a decrease from November 2022 to December 2022 of .066, which is right around this winter.</p>
+
+    <div class="ww-callout">
+      <div class="ww-callout__label">Key Finding</div>
+      <p>Overall, this map seems pretty normal and not super indicative of anything in particular.</p>
+    </div>
+
+    <div class="ww-map-card">
+      <div class="ww-map-card__header">
+        <span class="ww-map-card__title">Difference Map — Dec 2025 → Jan 2026</span>
+        <span class="ww-badge ww-badge--down">↓ Net Decrease</span>
+      </div>
+      <img src="../report_picture/dec25/rp_12_2025_diff.png" alt="Nov 2025 to Dec 2025 Difference Map">
+      <div class="ww-map-card__caption">Blue = NDVI increase · Red = NDVI decrease · Values represent absolute NDVI change</div>
+    </div>
+
+    <div class="ww-callout ww-callout--warn">
+      <div class="ww-callout__label">Remote Sensing Artifacts</div>
+      <p>The sharp increase over the actual lake area of the Great Salt Lake are likely due to remote sensing artifacts, so please disregard. They are likely not real readings and when looking at the raw NDVI maps, they did not change at all. Lake area is very consistently 0 NDVI.</p>
+    </div>
+  </div>
+
   <div class="ww-section">
     <div class="ww-section__tag">Year-over-Year</div>
     <h2>December 2025 vs. December 2024</h2>
-    <p>Another thing we saw was the slight decrease in overall vegetation from December 2024 to December 2025, although it was by no means as substantial as the decrease from November 2025 to December 2025. This could be due to the warmer winter we've had this year, as regional drought and temperature conditions reported by NOAA provide contextual support for the observed interannual NDVI decline between December 2024 and December 2025.</p>
+    <p>Compared to December 2024, we saw a mean increase of about +.015, slightly higher than last year's December. We see the highest increases in the mountainous areas of the Front, while some of the Western, more arid parts of the Front including the Salt Lake Valley even had a slight decrease from last year. While the mountains had less snowpack, which could describe the increase in vegetation, the slight decrease in the Valley and more arid parts of the Front could be attributed to stressed vegetation due to drought and lack of precipitation. Lower-elevation areas throughout this month received little-to-no precipitation, which is unlike other Decembers which typically receive lots of precipitation in the form of snow, which could explain the decrease.</p>
 
     <div class="ww-map-card">
       <div class="ww-map-card__header">
         <span class="ww-map-card__title">Difference Map — Dec 2024 → Dec 2025</span>
         <span class="ww-badge ww-badge--yoy">Year-over-Year</span>
       </div>
-      <img src="../report_picture/rp_12_2025_diff24.png" alt="Dec 2024 to Dec 2025 Difference Map">
-      <div class="ww-map-card__caption">The large rectangular block of green is a remote sensing artifact, likely cloud cover — disregard</div>
+      <img src="../report_picture/dec25/rp_12_diff24.png" alt="Dec 2024 to Dec 2025 Difference Map">
+      <div class="ww-map-card__caption">Stressed vegetation and low snowpack explain the change in NDVI from last December.</div>
     </div>
   </div>
 
-  <hr class="ww-divider">
+  <div class="ww-section">
+    <div class="ww-section__tag">Winter Analysis</div>
+    <h2>Preliminary Winter Analysis of this December: What This Winter Could Look Like</h2>
+    <p>The next two figures provide a graph of past winter intensity and the NDVI z-scored values for the past Decembers. The winter intensity is measured by the winter dormancy metric, so whenever a z-scored value over the entire time-series is below -.5, that is considered a winter month. The sum of all values of the winter months is how we measure winter intensity. As we can see from the below graphs, a low value in December is correlated to a more intense winter, or in other words, a "better" winter. Typically, when the December Zscore, seen in figure 2, is below 0, the winter turns out to be above average. When the Zscore is above 0, this tends to turn out to be a below-average winter. We see that December 2025 has a Zscore value of .65-.75, which could be indicative of a below-average winter, although this is an extremely early and tentative estimate, with data only backing this up over thirteen years, so nothing is set in stone.</p>
 
-  <!-- CONCLUSION -->
+    <div class="ww-map-card">
+      <div class="ww-map-card__header">
+        <span class="ww-map-card__title">Winter Intensity per Season</span>
+        <span class="ww-badge ww-badge--yoy">Winter Analysis</span>
+      </div>
+      <img src="../report_picture/dec25/winter_graph1.png" alt="Winter Dormancy from 2013-2025">
+      <div class="ww-map-card__caption">Dormancy of vegetation can give us a clear idea of how intense our winters are.</div>
+    </div>
+    <div class="ww-map-card">
+      <div class="ww-map-card__header">
+        <span class="ww-map-card__title">NDVI Trends in December</span>
+        <span class="ww-badge ww-badge--yoy">December Zscore</span>
+      </div>
+      <img src="../report_picture/dec25/winter_graph2.png" alt="December Zscore NDVI from 2013-2025">
+      <div class="ww-map-card__caption">An overview of the vegetation historically during December.</div>
+    </div>
+    <div class="ww-map-card">
+      <div class="ww-map-card__header">
+        <span class="ww-map-card__title">NDVI Trends in December</span>
+        <span class="ww-badge ww-badge--yoy">December Zscore</span>
+      </div>
+      <img src="../report_picture/dec25/winter_graph3.png" alt="December Zscore NDVI from 2013-2025">
+      <div class="ww-map-card__caption">An overview of the vegetation historically during December.</div>
+    </div>
+  </div>
+
   <div class="ww-conclusion">
     <h3>Summary</h3>
-    <p>We saw a decrease in NDVI from November 2025 to December 2025 with the likely cause of increased snow cover, as well as a decrease in NDVI from December 2024 to December 2025, likely due to drought and warmer temperatures.</p>
+    <p>Despite seasonal expectations, NDVI was anomalously high compared to historical Decembers, driven not by healthy vegetation but by a conspicuous absence of snowpack. Mountain areas appeared greener than usual while valley and arid zones showed slight vegetation stress, a spatial divergence consistent with drought conditions at lower elevations and reduced snow cover at higher ones.</p>
+    <p>The December z-score of +0.65 to +0.75 placed this month among the most anomalously warm and dry December starts in the record, offering an early signal of the below-average winter that January and February would confirm. What the satellite saw in December 2025 looked less like the start of winter and more like a continuation of late autumn.</p>
   </div>
 
   <div class="ww-callout ww-callout--note">
-    <div class="ww-callout__label">Interpretive Notes</div>
-    <p>The seasonal NDVI drop highlights the strong effect of snow on satellite-derived vegetation indices. The interannual decline may suggest early signs of vegetation stress entering winter, potentially influenced by warmer temperatures and drought. These observations are contextual and not definitive conclusions.</p>
+    <div class="ww-callout__label">Methodological Note</div>
+    <p>NDVI values derived from Landsat 8 TOA median composites at 5.5km resolution. Difference maps computed from raw NDVI prior to any normalization. Historical comparisons use the 2013–2026 Landsat archive.</p>
   </div>
 
-  <!-- FOOTNOTES -->
   <div class="ww-footnotes">
-    <h4>Works Cited</h4>
-    <p>Landsat-8 imagery courtesy of the U.S. Geological Survey.</p>
-    <p>NOAA National Centers for Environmental Information, Monthly Global Drought Narrative for December 2025, published online January 2026, retrieved on January 23, 2026 from <a href="https://www.ncei.noaa.gov/access/monitoring/monthly-report/global-drought/202512" target="_blank">ncei.noaa.gov</a>.</p>
+    <h4>Data Sources</h4>
+    <p>Landsat 8/9 imagery courtesy of the U.S. Geological Survey via Google Earth Engine.</p>
+    <p>NOAA National Centers for Environmental Information, Monthly Climate Reports and drought summaries.</p>
   </div>
 
 </div>
 
 <footer class="ww-footer">
-  © 2025 <a href="../index.html">Wasatch Watch</a> · Protecting the Future of the Wasatch
+  © 2025-2026 <a href="../index.html">Wasatch Watch</a> · Protecting the Future of the Wasatch
 </footer>
 
 <script src="../script.js"></script>
