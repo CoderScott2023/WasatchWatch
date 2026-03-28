@@ -139,36 +139,48 @@
   </div>
 
   <div class="ww-section">
-    <div class="ww-section__tag">Winter Analysis</div>
-    <h2>Preliminary Winter Analysis of this December: What This Winter Could Look Like</h2>
-    <p>The next two figures provide a graph of past winter intensity and the NDVI z-scored values for the past Decembers. The winter intensity is measured by the winter dormancy metric, so whenever a z-scored value over the entire time-series is below -.5, that is considered a winter month. The sum of all values of the winter months is how we measure winter intensity. As we can see from the below graphs, a low value in December is correlated to a more intense winter, or in other words, a "better" winter. Typically, when the December Zscore, seen in figure 2, is below 0, the winter turns out to be above average. When the Zscore is above 0, this tends to turn out to be a below-average winter. We see that December 2025 has a Zscore value of .65-.75, which could be indicative of a below-average winter, although this is an extremely early and tentative estimate, with data only backing this up over thirteen years, so nothing is set in stone.</p>
+  <div class="ww-section__tag">Winter Analysis</div>
+  <h2>What December Tells Us About the Winter Ahead</h2>
+  <p>One of the more interesting applications of the long-term NDVI record is using December vegetation conditions as an early signal for how the rest of the winter might unfold. The logic is straightforward: in strong snow years, December NDVI is suppressed by early and persistent snowpack, producing anomalously low z-scores. In weak snow years, vegetation stays exposed longer, pushing December z-scores higher than normal.</p>
 
-    <div class="ww-map-card">
-      <div class="ww-map-card__header">
-        <span class="ww-map-card__title">Winter Intensity per Season</span>
-        <span class="ww-badge ww-badge--yoy">Winter Analysis</span>
-      </div>
-      <img src="../report_picture/dec25/winter_graph1.png" alt="Winter Dormancy from 2013-2025">
-      <div class="ww-map-card__caption">Dormancy of vegetation can give us a clear idea of how intense our winters are.</div>
-    </div>
-    <div class="ww-map-card">
-      <div class="ww-map-card__header">
-        <span class="ww-map-card__title">NDVI Trends in December</span>
-        <span class="ww-badge ww-badge--yoy">December Zscore</span>
-      </div>
-      <img src="../report_picture/dec25/winter_graph2.png" alt="December Zscore NDVI from 2013-2025">
-      <div class="ww-map-card__caption">An overview of the vegetation historically during December.</div>
-    </div>
-    <div class="ww-map-card">
-      <div class="ww-map-card__header">
-        <span class="ww-map-card__title">NDVI Trends in December</span>
-        <span class="ww-badge ww-badge--yoy">December Zscore</span>
-      </div>
-      <img src="../report_picture/dec25/winter_graph3.png" alt="December Zscore NDVI from 2013-2025">
-      <div class="ww-map-card__caption">An overview of the vegetation historically during December.</div>
-    </div>
+  <p>To measure overall winter intensity, we use the Winter Dormancy Index which is an index that sums all monthly z-scored NDVI values that fall below a threshold of -0.5, which we define as a "winter month." A more negative cumulative sum indicates a more intense winter with deeper and longer-lasting dormancy. Figure 1 shows this metric across all winters in the 12-year record, confirming it captures known anomalous seasons as the strong 2022–23 winter registers as one of the most intense, while weaker seasons like 2014–15 show much shallower dormancy.</p>
+
+  <p>Figure 2 plots the December z-score for each year against the final winter intensity for that season, revealing a consistent pattern: Decembers with z-scores below 0 tend to precede above-average winters, while Decembers above 0 tend to precede below-average ones. December 2025 registered a z-score of approximately +0.65 to +0.75 which is among the highest in the record, suggesting a below-average winter is likely. However, once again, this is a very tentative estimate across only twelve years of data, and this index is NOT claiming to "predict the future". There are simply so many factors, and across only twelve years of data, the observation is far from rigorous. Much can change and nothing is set in stone. Figure 3 shows the full December z-score time series for context.</p>
+
+  <div class="ww-callout ww-callout--warn">
+    <div class="ww-callout__label">Important Caveat</div>
+    <p>This is a preliminary and exploratory analysis based on only 13 years of data. The December z-score is a suggestive early signal, not a validated forecast tool. The dormancy threshold of -0.5 is also currently arbitrary and has not been formally validated against independent snowpack records. Treat these figures as contextual indicators, not definitive predictions.</p>
   </div>
 
+  <div class="ww-map-card">
+    <div class="ww-map-card__header">
+      <span class="ww-map-card__title">Figure 1 — Winter Intensity by Season (2013–2026)</span>
+      <span class="ww-badge ww-badge--yoy">Winter Dormancy Index</span>
+    </div>
+    <img src="../report_picture/dec25/winter_graph1.png" alt="Winter Dormancy from 2013-2025">
+    <div class="ww-map-card__caption">Cumulative sum of z-scored NDVI values below -0.5 threshold per winter season. More negative = more intense winter.</div>
+  </div>
+
+  <div class="ww-map-card">
+    <div class="ww-map-card__header">
+      <span class="ww-map-card__title">Figure 2 — December Z-Score vs. Winter Intensity</span>
+      <span class="ww-badge ww-badge--yoy">Early Signal Analysis</span>
+    </div>
+    <img src="../report_picture/dec25/winter_graph2.png" alt="December Zscore NDVI from 2013-2025">
+    <div class="ww-map-card__caption">December z-scores above 0 have historically preceded below-average winters. December 2025 sits at +0.65–0.75, among the highest on record.</div>
+  </div>
+
+  <div class="ww-map-card">
+    <div class="ww-map-card__header">
+      <span class="ww-map-card__title">Figure 3 — December Z-Score Time Series (2013–2025)</span>
+      <span class="ww-badge ww-badge--yoy">Historical Context</span>
+    </div>
+    <img src="../report_picture/dec25/winter_graph3.png" alt="December Zscore NDVI from 2013-2025">
+    <div class="ww-map-card__caption">Full December z-score record showing 2025 in historical context. The 2025 value is one of the highest anomalies in the 13-year archive.</div>
+  </div>
+</div>
+
+  
   <div class="ww-conclusion">
     <h3>Summary</h3>
     <p>Despite seasonal expectations, NDVI was anomalously high compared to historical Decembers, driven not by healthy vegetation but by a conspicuous absence of snowpack. Mountain areas appeared greener than usual while valley and arid zones showed slight vegetation stress, a spatial divergence consistent with drought conditions at lower elevations and reduced snow cover at higher ones.</p>
