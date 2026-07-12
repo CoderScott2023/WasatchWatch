@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>June 2026 — Wasatch Watch</title>
+  <link rel="icon" type="image/png" href="/croppedmaps.png">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav class="ww-nav">
+  <a class="ww-nav__logo" href="../index.html">⬡ Wasatch Watch</a>
+  <button class="ww-nav__burger">☰</button>
+  <ul class="ww-nav__links">
+    <li><a href="../index.html">Home</a></li>
+    <li class="has-dropdown">
+      <a href="#">Data</a>
+      <ul class="ww-nav__dropdown">
+        <li><a href="../methodology.html">🔎 Methodology</a></li>
+        <li><a href="../repo.html">📂 Repository</a></li>
+        <li><a href="../monthlyreports.html">📋 Monthly Reports</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">About</a>
+      <ul class="ww-nav__dropdown">
+        <li><a href="../mission.html">🌍 The Mission</a></li>
+      </ul>
+    </li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="ww-hero">
+  <img class="ww-hero__img" src="../IMG_2276.jpg" alt="Wasatch Mountains">
+  <div class="ww-hero__overlay"></div>
+  <div class="ww-hero__content">
+    <div class="ww-hero__label">Monthly Report · Issue 07</div>
+    <h1 class="ww-hero__title">June 2026</h1>
+    <p class="ww-hero__sub">Vegetation dynamics across the Wasatch Front</p>
+    <p class="ww-hero__sub">By Scott Vars</p>
+    <p class="ww-hero__sub">Published July 11, 2026</p>
+  </div>
+</div>
+
+<div class="ww-container">
+
+  <div class="ww-stats">
+    <div class="ww-stat">
+      <span class="ww-stat__label">Month-over-Month</span>
+      <span class="ww-stat__value ww-stat__value--up">↑ NDVI</span>
+      <span class="ww-stat__note">May 2026 → June 2026 · +0.0883</span>
+    </div>
+    <div class="ww-stat">
+      <span class="ww-stat__label">Year-over-Year</span>
+      <span class="ww-stat__value ww-stat__value--up">↑ NDVI</span>
+      <span class="ww-stat__note">June 2025 → June 2026 · +0.0051</span>
+    </div>
+    <div class="ww-stat">
+      <span class="ww-stat__label">Primary Driver</span>
+      <span class="ww-stat__value ww-stat__value--sm">Peak Summer Vegetation</span>
+      <span class="ww-stat__note">Normal early-summer vegetation signal</span>
+    </div>
+  </div>
+
+  <div class="ww-section">
+    <div class="ww-section__tag">Current Month</div>
+    <h2>June 2026 NDVI</h2>
+    <p>This map shows the raw vegetation index across the Wasatch Front for June 2026. The scene has a big sharp east–west divide: the eastern half is mostly green pixels in the 0.4–0.6 range, reflecting the fully leafed-out Wasatch mountains, while the western half sits much lower in the 0.0–0.2 range across the desert and urban Salt Lake Valley. The lake values (Great Salt Lake and Utah Lake) sit at 0, as normal. Compared to May, the mountainous east has continued to fill in, and we are now looking at a quite healthy and nominal early-summer vegetation signal near its seasonal peak.</p>
+
+    <div class="ww-map-card">
+      <div class="ww-map-card__header">
+        <span class="ww-map-card__title">NDVI — June 2026</span>
+        <span class="ww-badge ww-badge--ndvi">Raw NDVI</span>
+      </div>
+      <img src="../report_picture/jun26/rp_6_2026.png" alt="June 2026 NDVI Map">
+      <div class="ww-map-card__caption">Landsat 8 median composite · 5.5km resolution · Wasatch Front bounding region</div>
+    </div>
+  </div>
+
+  <div class="ww-section">
+    <div class="ww-section__tag">Seasonal Anomaly</div>
+    <h2>June 2026 Compared to Historical Junes</h2>
+    <p>NDVI was somewhat above average for June 2026, with a scene-mean anomaly of about +0.0289 relative to the historical June mean. This is a net-positive signal, showing vegetation that is a little healthier than a typical June, though the increase is smaller and less uniform than what we saw in May. The gains are mostly across the vegetated eastern half of the Front and scattered through the central mountains, with a handful of red patches mixed in. Because this map is z-scored, the seasonal green-up signal is effectively stripped out, so the positive anomaly shows genuinely healthy vegetation rather than simply the time of year (which would be the case if we were comparing it to previous months, for example). Overall, June continues the healthy trajectory established in May, if at a more moderate pace.</p>
+
+    <div class="ww-callout">
+      <div class="ww-callout__label">Key Finding</div>
+      <p>A mild but genuine net increase over the historical June mean, showing healthy vegetation as we head into peak summer, though the anomaly is more moderate than May's.</p>
+    </div>
+
+    <div class="ww-map-card">
+      <div class="ww-map-card__header">
+        <span class="ww-map-card__title">Anomaly Map — June 2026</span>
+        <span class="ww-badge ww-badge--up">↑ Net Increase</span>
+      </div>
+      <img src="../report_picture/jun26/rp_6_2026_anom.png" alt="June 2026 Seasonal Anomaly Map">
+      <div class="ww-map-card__caption">Blue = NDVI increase · Red = NDVI decrease · Values represent absolute NDVI change</div>
+    </div>
+  </div>
+
+
+  <div class="ww-section">
+    <div class="ww-section__tag">NDVI Trends</div>
+    <h2>The Updated NDVI Trends Graphs</h2>
+    <p>Looking at the updated NDVI trends, June 2026 sits right near the seasonal peak, which is exactly what we expect for this time of year. June is near the top of the current year's wave, showing that the green-up season is basically done and vegetation should now hold near peak before beginning its seasonal decline through late summer, likely starting in August. The deseasonalized graph, which strips out the annual cycle to isolate the underlying trend, shows June landing slightly above the baseline which is consistent with the slight positive anomaly seen above. Overall, this is typical June behavior with a healthy underlying signal. Nothing really more to say.</p>
+
+    <div class="ww-map-card">
+      <div class="ww-map-card__header">
+        <span class="ww-map-card__title">NDVI Trends Graph: 2013-2026</span>
+        <span class="ww-badge ww-badge--yoy">NDVI Trend Graph</span>
+      </div>
+      <img src="../report_picture/jun26/rp_trends_26.png" alt="NDVI Trends Graph: 2013-2026">
+      <div class="ww-map-card__caption">A z-score below -0.5 is considered a winter month; June 2026 sits near the seasonal peak.</div>
+    </div>
+
+    <div class="ww-map-card">
+      <div class="ww-map-card__header">
+        <span class="ww-map-card__title">Deseasonalized NDVI Trend: 2013-2026</span>
+        <span class="ww-badge ww-badge--yoy">Deseasonalized</span>
+      </div>
+      <img src="../report_picture/jun26/rp_trends_26_ds.png" alt="Deseasonalized NDVI Trends Graph: 2013-2026">
+      <div class="ww-map-card__caption">Annual seasonal cycle removed to isolate the underlying trend; June 2026 lands slightly above baseline.</div>
+    </div>
+  </div>
+
+
+  <div class="ww-section">
+    <div class="ww-section__tag">Month-over-Month</div>
+    <h2>Change from May 2026</h2>
+    <p>NDVI increased overall from May to June, with a mean change of +0.0883 across the Wasatch Front region. This is a solid gain, though smaller than the very large April to May green-up, which is expected as vegetation approaches the summer peak and the rate of growth slows. The increase is mostly in the eastern mountains, where the clusters of blue show the continued filling-in of the forest canopy, while the western desert and valley stayed mostly flat. This reflects the tail end of the green-up finishing off in high altitude. Aside from a few scattered red pixels, virtually the entire vegetated half of the Front continued to gain. Overall, everything looks nominal for June.</p>
+
+    <div class="ww-map-card">
+      <div class="ww-map-card__header">
+        <span class="ww-map-card__title">Difference Map — May 2026 → June 2026</span>
+        <span class="ww-badge ww-badge--up">↑ Net Increase</span>
+      </div>
+      <img src="../report_picture/jun26/rp_6_2026_diff.png" alt="May 2026 to June 2026 Difference Map">
+      <div class="ww-map-card__caption">Blue = NDVI increase · Red = NDVI decrease · Values represent absolute NDVI change</div>
+    </div>
+
+    <div class="ww-callout ww-callout--warn">
+      <div class="ww-callout__label">Remote Sensing Artifacts</div>
+      <p>Any sharp isolated changes over the open water of the Great Salt Lake, Bear Lake, or Utah Lake are likely remote sensing artifacts and should be disregarded. They are generally not real readings — when cross-checked against the raw NDVI maps, the lake pixels did not meaningfully change.</p>
+    </div>
+  </div>
+
+  <div class="ww-section">
+    <div class="ww-section__tag">Year-over-Year</div>
+    <h2>June 2026 vs. June 2025</h2>
+    <p>Compared to June 2025, there is essentially no meaningful change in vegetation, with a mean change of only +0.0051. The scene shows as a fairly even mix of small increases and small decreases, with no dominant direction and only a few isolated strong pixels either way. This indicates a stable, stagnant year-over-year picture: June 2025 and June 2026 produced very similar vegetation responses. Combined with the modest positive anomaly this month, we see that the healthy conditions observed a year ago have carried forward, continuing the trend into 2026.</p>
+
+    <div class="ww-map-card">
+      <div class="ww-map-card__header">
+        <span class="ww-map-card__title">Difference Map — June 2025 → June 2026</span>
+        <span class="ww-badge ww-badge--yoy">Year-over-Year</span>
+      </div>
+      <img src="../report_picture/jun26/rp_6_2026_diff25.png" alt="June 2025 to June 2026 Difference Map">
+      <div class="ww-map-card__caption">Blue = NDVI increase · Red = NDVI decrease · Near-zero mean reflects a stable year-over-year scene</div>
+    </div>
+  </div>
+
+  <hr class="ww-divider">
+
+    <div class="ww-conclusion">
+    <h3>Summary</h3>
+    <p>The June 2026 Wasatch Watch report tells a story of a healthy vegetation season settling into its summer peak. Month-over-month, NDVI increased by a mean of +0.0883 from May to June which is a solid gain, though more moderate than the large April→May green-up, as the rate of growth naturally slows near peak. The gains were concentrated in the eastern Wasatch mountains, finishing off the high-country canopy, while the western desert and valley stayed flat. The trends graphs confirm this is typical June behavior, with the seasonal cycle near its crest and the deseasonalized signal sitting slightly above baseline.</p>
+    <p>The seasonal anomaly map reinforces a mildly positive picture: June 2026 sits about +0.0289 above the historical June mean, a genuine but modest signal of above-average vegetation health once the green-up is stripped out by z-scoring. Year-over-year, June 2026 is essentially flat compared to June 2025, with a mean change of only +0.0051, indicating that both years produced a very similar vegetation response and that the healthy conditions seen in 2025 have continued into 2026. Taken together, the Front enters mid-summer with mature, healthy vegetation and no signs of distress.</p>
+  </div>
+
+  <div class="ww-callout ww-callout--note">
+    <div class="ww-callout__label">Methodological Note</div>
+    <p>NDVI values derived from Landsat 8 TOA median composites at 5.5km resolution. Difference maps computed from raw NDVI prior to any normalization. Historical comparisons use the 2013–2026 Landsat archive.</p>
+  </div>
+
+  <div class="ww-footnotes">
+    <h4>Data Sources</h4>
+    <p>Landsat 8/9 imagery courtesy of the U.S. Geological Survey via Google Earth Engine.</p>
+    <p>NOAA National Centers for Environmental Information, Monthly Climate Reports and drought summaries.</p>
+  </div>
+
+</div>
+
+<footer class="ww-footer">
+  © 2025-2026 <a href="../index.html">Wasatch Watch</a> · Protecting the Future of the Wasatch
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
